@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent in a Day &middot; Columbus</title>
+<style>
+  :root { --blue:#02018C; --orange:#FF831D; --ink:#1A1A1A; --mute:#5b6070; --pale:#F8F8F8; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--ink); background:#fff; }
+  .wrap { max-width:860px; margin:0 auto; padding:28px 22px 70px; }
+  header { display:flex; align-items:center; gap:18px; padding-bottom:14px; border-bottom:3px solid var(--orange); }
+  header img { height:30px; }
+  header span { font-size:.85rem; color:var(--blue); letter-spacing:.05em; text-transform:uppercase; }
+  h1 { font-family:'Times New Roman',Times,serif; color:var(--blue); font-size:2.2rem; margin:30px 0 6px; }
+  .lede { color:var(--mute); font-size:1.02rem; margin:0 0 30px; }
+  a.lab { display:block; text-decoration:none; color:inherit; background:var(--pale);
+          border-left:5px solid var(--blue); border-radius:4px; padding:16px 20px; margin-bottom:12px; }
+  a.lab:hover { background:#EEF1FA; border-left-color:var(--orange); }
+  a.lab .n { font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--orange); font-weight:bold; }
+  a.lab .t { font-family:'Times New Roman',Times,serif; font-size:1.3rem; color:var(--blue); margin:3px 0; }
+  a.lab .d { font-size:.92rem; color:var(--mute); }
+  .note { margin-top:34px; padding:16px 20px; background:#FDEFE0; border-left:4px solid var(--orange); font-size:.92rem; }
+  footer { margin-top:40px; padding-top:16px; border-top:1px solid #e3e3e3; font-size:.8rem; color:#8b8f9c; }
+  footer a { color:#8b8f9c; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="columbus-logo.svg" alt="Columbus">
+    <span>Agent in a Day</span>
+  </header>
+
+  <h1>Lab guides</h1>
+  <p class="lede">Work through these in order. Your presenter will start each one from the front, then hand over.</p>
+
+  <a class="lab" href="lab1.html">
+    <div class="n">Lab 1</div>
+    <div class="t">Build your first agent</div>
+    <div class="d">Agent Builder, grounded in a public reference source. Ends with a question it cannot answer.</div>
+  </a>
+
+  <a class="lab" href="lab2.html">
+    <div class="n">Lab 2</div>
+    <div class="t">Give it what only you have</div>
+    <div class="d">Copilot Studio. The plant's own documents, and a tool that writes a maintenance request.</div>
+  </a>
+
+  <a class="lab" href="lab3.html">
+    <div class="n">Lab 3</div>
+    <div class="t">The first join in the chain</div>
+    <div class="d">A specialist child agent, and knowing when to hand over rather than act.</div>
+  </a>
+
+  <div class="note">
+    <strong>A note on the later use cases.</strong> Each lab has extra use cases we do not run on the day.
+    They are left in deliberately &mdash; work through them in your own time. Some keep Microsoft's own
+    Contoso scenario rather than Vestbjerg, and some need a licence this training tenant does not have.
+  </div>
+
+  <footer>
+    Lab content adapted from <a href="https://github.com/microsoft/mcs-labs">microsoft/mcs-labs</a>, MIT licensed.
+    Scenario, documents and exercises &copy; Columbus Global.
+  </footer>
+</div>
+</body>
+</html>
