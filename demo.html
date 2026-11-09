@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Watch it work on its own &middot; Agent in a Day &middot; Columbus</title>
+<style>
+  :root { --blue:#02018C; --orange:#FF831D; --ink:#1A1A1A; --mute:#5b6070;
+          --pale:#F8F8F8; --lblue:#E8EBFB; --lamber:#FDEFE0; --green:#4A7C59; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--ink); line-height:1.6; background:#fff; }
+  .wrap { max-width:860px; margin:0 auto; padding:28px 22px 80px; }
+  header { display:flex; align-items:center; gap:18px; padding-bottom:14px; border-bottom:3px solid var(--orange); }
+  header img { height:30px; }
+  header .kick { font-size:.82rem; color:var(--blue); letter-spacing:.05em; text-transform:uppercase; }
+  h1 { font-family:'Times New Roman',Times,serif; color:var(--blue); font-size:2.15rem; margin:32px 0 4px; }
+  .lede { color:var(--mute); font-size:1.02rem; margin:0 0 6px; }
+  .meta { font-size:.85rem; color:#8b8f9c; margin:0 0 30px; }
+  h2 { font-family:'Times New Roman',Times,serif; color:var(--blue); font-size:1.5rem;
+       margin:36px 0 10px; padding-bottom:6px; border-bottom:1px solid #e8e8ee; }
+  h3 { font-size:1rem; margin:24px 0 8px; color:#333; }
+  .box { background:var(--pale); border-left:4px solid var(--blue); padding:16px 20px; margin:22px 0; }
+  .box.amber { background:var(--lamber); border-left-color:var(--orange); }
+  .box .t { font-weight:bold; color:var(--blue); margin-bottom:6px; }
+  .box.amber .t { color:#C76A0F; }
+  ol.steps { padding-left:0; list-style:none; counter-reset:s; }
+  ol.steps li { counter-increment:s; position:relative; padding:8px 0 8px 46px; }
+  ol.steps li::before { content:counter(s); position:absolute; left:0; top:9px;
+    width:28px; height:28px; border-radius:50%; background:var(--blue); color:#fff;
+    font-size:.82rem; font-weight:bold; display:flex; align-items:center; justify-content:center; }
+  table { border-collapse:collapse; width:100%; margin:18px 0; font-size:.94rem; }
+  th { background:var(--pale); text-align:left; padding:9px 12px; border:1px solid #e3e3ea; color:var(--blue); }
+  td { padding:9px 12px; border:1px solid #e3e3ea; vertical-align:top; }
+  td.k { font-weight:bold; width:30%; }
+  .dial { display:flex; gap:8px; margin:20px 0; flex-wrap:wrap; }
+  .dial div { flex:1 1 140px; background:var(--pale); border-radius:4px; padding:12px; text-align:center; }
+  .dial div.here { background:var(--lamber); outline:2px solid var(--orange); }
+  .dial .n { font-weight:bold; color:var(--blue); font-size:1.3rem; }
+  .dial .d { font-size:.8rem; color:var(--mute); }
+  .write { border-bottom:1px solid #bbb; height:34px; margin:6px 0 16px; }
+  .pull { font-size:1.2rem; font-weight:bold; color:var(--orange); margin:26px 0; }
+  footer { margin-top:50px; padding-top:16px; border-top:1px solid #e3e3e3; font-size:.8rem; color:#8b8f9c; }
+  footer a { color:#8b8f9c; }
+  @media print { header { border-bottom-width:2px; } .wrap { padding:0; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <img src="columbus-logo.svg" alt="Columbus">
+    <span class="kick">Agent in a Day</span>
+  </header>
+
+  <h1>Watch it work on its own</h1>
+  <p class="lede">Two demonstrations, then a conversation about your own idea.</p>
+  <p class="meta">35 minutes &middot; No keyboards for this one &middot; Follows Lab 3</p>
+
+  <div class="box">
+    <div class="t">Nothing to build here</div>
+    Both of these are run from the front. Watch, then we talk. The second half is a
+    discussion at your table about the idea you nominated.
+  </div>
+
+  <h2>Satnav, or self-driving</h2>
+  <p>Everything you have built today is a satnav. It knows things you do not, and it does
+  nothing until you ask it a question.</p>
+  <p>A trigger is the difference between that and a car that pulls away on its own, because
+  the time has come to leave. Nobody asked it to.</p>
+  <p class="pull">Both are useful. They need very different amounts of trust.</p>
+
+  <h2>What you are about to watch</h2>
+  <p>A fault report arrives by email. Nobody opens a chat. Nobody asks the agent anything.</p>
+  <ol class="steps">
+    <li>The email lands in a monitored mailbox. It does not say P-207 &mdash; it says
+        &ldquo;the feed pump in Pump House 2, bay B&rdquo;, and mentions it has been noisier
+        than usual for a couple of days.</li>
+    <li>The agent reads it, works out which asset that is, and looks it up in the manuals.</li>
+    <li>A maintenance request appears in the planner&rsquo;s list &mdash; drafted before
+        anyone had read the email.</li>
+    <li>Then we open the activity log and read what it actually did, in order.</li>
+  </ol>
+
+  <div class="box amber">
+    <div class="t">Autonomy is delegated. Accountability is not.</div>
+    The agent did the work. Somebody still owns the outcome. The log is what makes that
+    acceptable rather than unnerving &mdash; you can see what it did, in what order, and why.
+  </div>
+
+  <h3>One thing about cost</h3>
+  <p>An agent that runs on its own runs whether or not anyone needed it to, and every run
+  costs something. The agent that becomes popular is the one most likely to become
+  expensive &mdash; and the one most likely to stop working when it runs out.</p>
+  <p><strong>That is not a reason to avoid this. It is a reason to ask for a limit on it.</strong></p>
+
+  <h2>Turn the dial, don&rsquo;t flip the switch</h2>
+  <p>Most real use cases sit at two or three, not five. The dial is a design choice, not a
+  maturity model &mdash; nobody is failing by staying at two.</p>
+  <div class="dial">
+    <div><div class="n">1</div><div class="d">It answers<br>You decide everything</div></div>
+    <div class="here"><div class="n">2</div><div class="d">It drafts<br>You approve</div></div>
+    <div><div class="n">3</div><div class="d">It acts<br>Within limits you set</div></div>
+    <div><div class="n">4</div><div class="d">It acts<br>You see everything it did</div></div>
+    <div><div class="n">5</div><div class="d">It acts<br>You trust the pattern</div></div>
+  </div>
+  <p>The agent you built this morning is at two. It drafts the request and waits to be told.</p>
+
+  <h2>Who could say no?</h2>
+  <p>Now think about your own idea rather than the pump. If you wanted to build it for real
+  on Monday, who would have to agree?</p>
+
+  <table>
+    <tr><th>Who</th><th>What they actually want</th></tr>
+    <tr><td class="k">IT and security</td><td>A sanctioned path they can see. They worry about data leaving, and about things nobody can support</td></tr>
+    <tr><td class="k">Whoever owns the data</td><td>To know who can see what, and who decided</td></tr>
+    <tr><td class="k">Legal or compliance</td><td>A record of what happened and why</td></tr>
+    <tr><td class="k">Whoever pays</td><td>A number, and to know what happens if it gets popular</td></tr>
+    <tr><td class="k">People whose work changes</td><td>To know whether this replaces them</td></tr>
+    <tr><td class="k">A sponsor</td><td>Something visible they can point at</td></tr>
+  </table>
+
+  <div class="box">
+    <div class="t">Two things worth knowing</div>
+    Most of these people want what you want: something that works and does not blow up.
+    And most opposition is about not being told, rather than about the technology.
+  </div>
+
+  <h3>For your idea &mdash; what could go wrong, and what data does it touch?</h3>
+  <div class="write"></div>
+  <div class="write"></div>
+
+  <h3>Who would need to approve it? Name people, not departments.</h3>
+  <div class="write"></div>
+  <div class="write"></div>
+
+  <h3>Who could sponsor it?</h3>
+  <div class="write"></div>
+
+  <h2>Round table</h2>
+  <p>Each table picks one idea worth taking further, and names the biggest thing standing
+  in its way. One sentence each &mdash; there are a lot of tables and the temptation to
+  explain is strong.</p>
+  <p>Write yours on your participant sheet before we go round.</p>
+
+  <footer>
+    Part of Columbus&rsquo;s Agent in a Day workshop. Lab content adapted from
+    <a href="https://github.com/microsoft/mcs-labs">microsoft/mcs-labs</a>, MIT licensed.
+    Scenario, documents and exercises &copy; Columbus Global.
+  </footer>
+
+</div>
+</body>
+</html>
