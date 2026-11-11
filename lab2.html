@@ -1555,7 +1555,7 @@
       <td>200</td>
       <td>Maker</td>
       <td>45 minutes</td>
-      <td>After completing this lab, participants will be able to create and configure a new Copilot Studio agent with custom instructions and AI model selection, enhance agent intelligence by adding document and website knowledge sources, extend agent capabilities by creating connector-based and custom tools, and build custom topics with triggers and nodes to handle structured conversation flows.</td>
+      <td>After completing this lab, participants will be able to create and configure a new Copilot Studio agent with custom instructions and AI model selection, enhance agent intelligence by adding document and website knowledge sources, extend agent capabilities by creating a connector-based tool, and build custom topics with triggers and nodes to handle structured conversation flows.</td>
     </tr>
   </tbody>
 </table>
@@ -1610,7 +1610,7 @@
 
 <p>Microsoft Copilot Studio empowers makers to build sophisticated AI agents without writing code. By combining intuitive visual tools with powerful AI capabilities, you can create agents that understand natural language, leverage your organization’s knowledge, connect to external services, and guide users through structured conversation flows.</p>
 
-<p><strong>Real-world example:</strong> A sales team needs an AI assistant that can answer product questions from official documentation, fetch real-time weather data for event planning, analyze the quality of email drafts, and collect contact information for a mailing list. With Copilot Studio, you build one agent that does all of this: it references product docs for accurate answers, uses connector tools for live data, runs custom prompt analysis, and guides users through a structured signup flow - all without writing a single line of code.</p>
+<p><strong>Real-world example:</strong> A sales team needs an AI assistant that can answer product questions from official documentation, fetch real-time weather data for event planning, and collect contact information for a mailing list. With Copilot Studio, you build one agent that does all of this: it references product docs for accurate answers, uses connector tools for live data, and guides users through a structured signup flow - all without writing a single line of code.</p>
 
 <p>This lab takes you through the complete journey from agent creation to a fully capable assistant with knowledge sources, tools, and custom topics - giving you the foundation to build production-ready AI solutions.</p>
 
@@ -1641,10 +1641,6 @@
     <tr>
       <td><strong>Tools</strong></td>
       <td>Extend agent capabilities beyond knowledge sources by connecting to external APIs, connectors, and services - enabling real-time data access and action execution that makes agents truly interactive</td>
-    </tr>
-    <tr>
-      <td><strong>Custom Tools</strong></td>
-      <td>Purpose-built tools with custom prompts and inputs that transform user requests into specific actions - like prompt analysis, data transformation, or specialized calculations</td>
     </tr>
     <tr>
       <td><strong>Topics</strong></td>
@@ -1680,7 +1676,7 @@ If you are completing this lab as part of a CAT-led workshop or bootcamp, you do
 
 <ul>
   <li>Access to Microsoft Copilot Studio (trial or licensed environment)</li>
-  <li>A document to upload as a knowledge source (PDF, Word, or text file) - or use the <a href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/bade/documents/products-and-services/en-us/bizapps/Microsoft-Copilot-Studio-Licensing-Guide-June-2026-PUB.pdf" target="_blank" rel="noopener noreferrer">Copilot Studio Licensing Guide (June 2026)</a></li>
+  <li>A document to upload as a knowledge source (PDF, Word, or text file) - or use the <a href="P-207-Mechanical-Seal-Replacement-Manual.pdf" target="_blank" rel="noopener noreferrer">P-207 Mechanical Seal Replacement Manual</a></li>
   <li>Basic familiarity with web browsers and form filling</li>
 </ul>
 
@@ -1695,7 +1691,6 @@ If you are completing this lab as part of a CAT-led workshop or bootcamp, you do
   <li>Configure agent settings including AI model selection (Claude Sonnet 4.6)</li>
   <li>Upload and integrate knowledge sources (documents and websites) to ground agent responses</li>
   <li>Create a connector-based tool that retrieves real-time weather data</li>
-  <li>Build a custom prompt analyzer tool with inputs and custom instructions</li>
   <li>Create custom topics with triggers to handle specific conversation patterns</li>
   <li>Test your agent across all capabilities to verify end-to-end functionality</li>
 </ul>
@@ -1729,7 +1724,7 @@ If you are completing this lab as part of a CAT-led workshop or bootcamp, you do
     <tr>
       <td>3</td>
       <td><a href="#use-case-3-extend-your-agent-with-tools">Extend Your Agent with Tools</a></td>
-      <td>Connect your agent to external services and build custom analytical capabilities</td>
+      <td>Connect your agent to external services</td>
       <td>15 min</td>
     </tr>
     <tr>
@@ -1797,20 +1792,14 @@ On a first sign-in (especially for workshop / fresh-tenant accounts) you may see
     <p>In the left navigation, select <strong>Agents</strong>.</p>
   </li>
   <li>
-    <p>Select the <strong>down-arrow (chevron)</strong> next to the <strong>New Agent</strong> button, then choose <strong>New classic agent</strong>.</p>
+    <p>Select the <strong>down-arrow (chevron)</strong> next to the <strong>New agent</strong> button, then under <strong>Other ways to build</strong> choose <strong>Agent (Standard)</strong>.</p>
 
-    <p><img src="new-agent-classic-menu.png" alt="New Agent split-button menu showing New classic agent"></p>
-
-    <blockquote class="notice notice--info">
-      <p><strong>Note:</strong>
-Leave the <strong>New experience</strong> toggle <strong>on</strong>. <strong>New classic agent</strong> opens the classic authoring canvas while keeping you in the new experience — there’s no need to switch experiences. (The classic create flow opens in a new browser tab.)</p>
-    </blockquote>
+    <p><img src="new-agent-classic-menu.png" alt="New agent menu showing Agent (Standard) under Other ways to build"></p>
   </li>
   <li>
     <p>In the <strong>Name your agent</strong> dialog, enter the following name and select <strong>Create</strong>:</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>Vestbjerg Maintenance Assistant
-</code></pre></div>    </div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>Vestbjerg Maintenance Assistant</code></pre></div>    </div>
   </li>
   <li>
     <p>Wait for the <strong>“Your agent has been provisioned.”</strong> notification. Your agent opens on its <strong>Overview</strong> page with the <strong>Overview / Knowledge / Tools / Agents / Topics / Channels</strong> tabs.</p>
@@ -1830,8 +1819,7 @@ Guidelines:
 - Always name the document your answer came from.
 - Never invent a safety or isolation instruction. If the procedure is not in your documents, say so and tell the technician to check the permit.
 - Keep responses brief and practical. You are talking to someone standing next to a machine.
-- If you are unsure, say so rather than guessing.
-</code></pre></div>    </div>
+- If you are unsure, say so rather than guessing.</code></pre></div>    </div>
 
     <blockquote class="notice notice--info">
       <p><strong>Note:</strong>
@@ -1852,8 +1840,12 @@ Think of instructions as the agent’s job description: clear, specific instruct
   <li>
     <p>Input the following URL and select <strong>Add</strong>.</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>https://learn.microsoft.com
-</code></pre></div>    </div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>https://www.osha.gov/control-hazardous-energy</code></pre></div>    </div>
+
+    <blockquote class="notice notice--info">
+      <p><strong>Note:</strong>
+When adding public website knowledge sources in Copilot Studio, you can only filter URLs up to two directories deep (e.g., <code class="language-plaintext highlighter-rouge">domain.com/level1/level2</code>). This is a limitation of the indexing performed by Bing. Deeper URLs will still be used, but you won’t be able to scope the knowledge source more granularly beyond two levels.</p>
+    </blockquote>
   </li>
   <li>
     <p>The website should appear in the list of links. Select <strong>Add to agent</strong> to save the change.</p>
@@ -1866,11 +1858,10 @@ Think of instructions as the agent’s job description: clear, specific instruct
   <li>
     <p>In the test panel on the right side of the screen, enter the following question and select <strong>Send</strong>:</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>What is the isolation procedure for P-207?
-</code></pre></div>    </div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>What types of hazardous energy must be controlled before I start maintenance on a pump?</code></pre></div>    </div>
   </li>
   <li>
-    <p>Review the agent’s response. Notice how it references the Microsoft Learn knowledge source you provided.</p>
+    <p>Review the agent’s response. Notice how it references the OSHA knowledge source you provided.</p>
   </li>
   <li>
     <p>Observe the response quality and how the agent leverages its instructions to provide helpful, contextual guidance.</p>
@@ -1890,7 +1881,7 @@ Think of instructions as the agent’s job description: clear, specific instruct
 <ul>
   <li><strong>Agent Instructions Define Behavior</strong> – Clear, specific instructions act as your agent’s job description and guide every interaction</li>
   <li><strong>AI Model Selection Impacts Quality</strong> – Claude Sonnet 4.6 offers superior reasoning and accuracy for production scenarios</li>
-  <li><strong>Knowledge Sources Ground Responses</strong> – Connecting external content (like Microsoft Learn) helps agents provide factual, verifiable answers</li>
+  <li><strong>Knowledge Sources Ground Responses</strong> – Connecting external content (like OSHA’s guidance on hazardous energy) helps agents provide factual, verifiable answers</li>
 </ul>
 
 <p><strong>Lessons learned &amp; troubleshooting tips:</strong></p>
@@ -1938,7 +1929,7 @@ Think of instructions as the agent’s job description: clear, specific instruct
 
 <p>In this section, you’ll learn how to upload documents as knowledge sources and test how your agent uses that knowledge to answer domain-specific questions.</p>
 
-<p><strong>Scenario:</strong> Your Vestbjerg Maintenance Assistant needs to answer questions about Copilot Studio licensing options, including pay-as-you-go pricing. You’ll upload the official licensing guide so the agent can provide accurate, up-to-date answers grounded in Microsoft documentation.</p>
+<p><strong>Scenario:</strong> Your Vestbjerg Maintenance Assistant needs to answer questions about replacing the mechanical seal on pump P-207. You’ll upload Vestbjerg’s equipment manual so the agent can provide accurate answers grounded in the plant’s own documentation.</p>
 
 <h3 id="objective-1">Objective<a class="header-link" href="#objective-1" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h3>
 
@@ -1955,10 +1946,10 @@ Think of instructions as the agent’s job description: clear, specific instruct
     <p>In your Copilot Studio agent, select  <strong>Knowledge</strong> in the top navigation bar for the agent.</p>
   </li>
   <li>
-    <p>Download the <a href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/bade/documents/products-and-services/en-us/bizapps/Microsoft-Copilot-Studio-Licensing-Guide-June-2026-PUB.pdf" target="_blank" rel="noopener noreferrer">Copilot Studio Licensing Guide (June 2026)</a>. Just make sure you have the file local on your computer.</p>
+    <p>Download the <a href="P-207-Mechanical-Seal-Replacement-Manual.pdf" target="_blank" rel="noopener noreferrer">P-207 Mechanical Seal Replacement Manual</a>. Just make sure you have the file local on your computer.</p>
   </li>
   <li>
-    <p>Select <strong>+ Add knowledge</strong> and select the <strong>Upload file</strong> option (the large drop-zone tile at the top of the Featured list). Click <strong>select to browse</strong> and use the file dialog to locate and select your downloaded license guide file from your local computer.</p>
+    <p>Select <strong>+ Add knowledge</strong> and select the <strong>Upload file</strong> option (the large drop-zone tile at the top of the Featured list). Click <strong>select to browse</strong> and use the file dialog to locate and select the downloaded P-207 manual from your local computer.</p>
 
     <blockquote class="notice notice--success">
       <p><strong>Tip:</strong>
@@ -1979,7 +1970,7 @@ You can upload multiple file types including PDF, Word documents (.docx), PowerP
 
     <blockquote class="notice notice--info">
       <p><strong>Note:</strong>
-Knowledge indexing typically takes 2-5 minutes depending on the document size. Larger documents or multiple files may take longer. If the status doesn’t seem to update, try refreshing your browser — this can help it reflect the latest progress. You can continue with the next steps while the file is indexing, but make sure it finishes before testing any licensing questions.</p>
+Knowledge indexing typically takes 2-5 minutes depending on the document size. Larger documents or multiple files may take longer. If the status doesn’t seem to update, try refreshing your browser — this can help it reflect the latest progress. You can continue with the next steps while the file is indexing, but make sure it finishes before testing any questions about the seal replacement.</p>
     </blockquote>
   </li>
 </ol>
@@ -2034,7 +2025,7 @@ Disabling Web Search and Allow Ungrounded responses together ensures that your a
     <p>Go back to the <strong>Overview</strong> tab and scroll down to the <strong>Knowledge</strong> section.</p>
   </li>
   <li>
-    <p>Select the uploaded licensing guide file to open its details.</p>
+    <p>Select the uploaded P-207 manual to open its details.</p>
   </li>
   <li>
     <p>Set the source to <strong>Official</strong> and select <strong>Got it</strong> if prompted that this will update agent instructions.</p>
@@ -2053,18 +2044,12 @@ Marking a knowledge source as <strong>Official</strong> in Copilot Studio tells 
     <p>Return to the <strong>Knowledge</strong> panel on the <strong>Overview</strong> tab on the agent and click <strong>+ Add Knowledge</strong> again.</p>
   </li>
   <li>
-    <p>This time, select <strong>Public websites</strong> as the knowledge source type.</p>
+    <p>This time, select <strong>SharePoint</strong> as the knowledge source type.</p>
   </li>
   <li>
     <p>Input the following URL and select <strong>Add</strong>.</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>[SHAREPOINT-SITE-URL]
-</code></pre></div>    </div>
-
-    <blockquote class="notice notice--info">
-      <p><strong>Note:</strong>
-When adding public website knowledge sources in Copilot Studio, you can only filter URLs up to two directories deep (e.g., <code class="language-plaintext highlighter-rouge">domain.com/level1/level2</code>). This is a limitation of the indexing performed by Bing. Deeper URLs will still be used, but you won’t be able to scope the knowledge source more granularly beyond two levels.</p>
-    </blockquote>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>https://m365x27558877.sharepoint.com/sites/Planningandoperations</code></pre></div>    </div>
   </li>
   <li>
     <p>Select <strong>Add to agent</strong>.</p>
@@ -2075,16 +2060,15 @@ When adding public website knowledge sources in Copilot Studio, you can only fil
   <li>
     <p>Test the agent with the following question:</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>Has the mechanical seal on P-207 failed before?
-</code></pre></div>    </div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>Has the mechanical seal on P-207 failed before?</code></pre></div>    </div>
   </li>
 </ol>
 
-<h4 id="test-licensing-knowledge">Test Licensing Knowledge<a class="header-link" href="#test-licensing-knowledge" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h4>
+<h4 id="test-licensing-knowledge">Test Equipment Manual Knowledge<a class="header-link" href="#test-licensing-knowledge" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h4>
 
 <blockquote class="notice notice--warning">
   <p><strong>Important:</strong>
-Before completing this section, make sure the licensing guide file you uploaded earlier has finished indexing. The Status column should show <strong>Ready</strong> before proceeding. If you are still waiting for the file to index, you can skip ahead to Use Case 3 and come back to test this later.</p>
+Before completing this section, make sure the P-207 manual you uploaded earlier has finished indexing. The Status column should show <strong>Ready</strong> before proceeding. If you are still waiting for the file to index, you can skip ahead to Use Case 3 and come back to test this later.</p>
 </blockquote>
 
 <ol>
@@ -2092,13 +2076,12 @@ Before completing this section, make sure the licensing guide file you uploaded 
     <p>In the test panel on the right, click start a new conversation to ensure the agent uses the latest knowledge.</p>
   </li>
   <li>
-    <p>Enter the following question to test the uploaded licensing guide and select <strong>Send</strong>:</p>
+    <p>Enter the following question to test the uploaded P-207 manual and select <strong>Send</strong>:</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>What should I check before fitting a replacement seal?
-</code></pre></div>    </div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>What should I check before fitting a replacement seal?</code></pre></div>    </div>
   </li>
   <li>
-    <p>Review the agent’s response. It should reference specific licensing information from the licensing guide you uploaded earlier.</p>
+    <p>Review the agent’s response. It should reference the pre-fit checks from the P-207 manual.</p>
   </li>
   <li>
     <p>Look for citations or references in the response that indicate which knowledge source was used.</p>
@@ -2136,32 +2119,9 @@ Agents typically show citations at the bottom of responses, indicating which kno
 
 <hr>
 
-<h2 id="use-case-3-extend-your-agent-with-tools">Use Case #3: Extend Your Agent with Tools<a class="header-link" href="#use-case-3-extend-your-agent-with-tools" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2><div style="border-left:5px solid #C76A0F;background:#FDEFE0;padding:16px 20px;margin:18px 0;font-family:Arial,sans-serif;font-size:0.95em;line-height:1.55;">
-<strong style="color:#02018C;font-size:1.05em;">Read this before you start Use Case 3</strong>
-<p style="margin:10px 0 6px;"><strong>The steps below build a &ldquo;prompt tool&rdquo;. That option no longer exists.</strong>
-When you open <em>Add tool</em> you will see Featured, Connectors, Workflows and MCP &mdash; but no Prompt.
-Microsoft removed prompt tools from this authoring experience, so the instructions from
-&ldquo;Select <em>Add new Prompt</em>&rdquo; onwards cannot be followed as written.</p>
-<p style="margin:6px 0;"><strong>Do this instead.</strong> We are adding a connector tool that writes a real record,
-which is closer to what you would build at work anyway.</p>
-<ol style="margin:8px 0 10px 18px;padding:0;">
-<li style="margin:4px 0;">On the agent, select <strong>Add tool</strong>.</li>
-<li style="margin:4px 0;">Choose the <strong>Connector</strong> filter, find <strong>SharePoint</strong>, and select the <strong>Create item</strong> action.</li>
-<li style="margin:4px 0;">Point it at the <strong>Maintenance Requests</strong> list on the Vestbjerg site.</li>
-<li style="margin:4px 0;">Give the tool this description:<br>
-<span style="font-family:Consolas,monospace;font-size:0.92em;display:block;background:#fff;padding:8px 10px;margin:6px 0;border:1px solid #e3d6c8;">Raises a maintenance request when a technician reports a fault that the current work order does not cover. Use this only when the technician is describing something newly found, not when they are asking a question.</span></li>
-<li style="margin:4px 0;">Then add the field mapping to your agent&rsquo;s <strong>instructions</strong> &mdash; the agent decides what goes in each column, so tell it:<br>
-<span style="font-family:Consolas,monospace;font-size:0.92em;display:block;background:#fff;padding:8px 10px;margin:6px 0;border:1px solid #e3d6c8;">When you raise a request: put a one-line summary starting with the asset tag in Title; put the technician&rsquo;s full description in their own words in Fault description; choose exactly one of Routine, Urgent or Safety for Priority. Read the drafted request back and wait for confirmation before submitting it.</span></li>
-<li style="margin:4px 0;">Test it with: <em>I have the cover off P-207 and the mechanical seal is damaged. It is not on the work order.</em></li>
-</ol>
-<p style="margin:8px 0 0;"><strong>Why bother writing a deliberately vague description first?</strong>
-Try <em>&ldquo;for requests&rdquo;</em> before the proper one above. The description is not documentation &mdash; it is how the
-agent decides whether to reach for the tool at all. Watching it get this wrong teaches more than getting it right first time.</p>
-<p style="margin:8px 0 0;color:#6b5a48;font-size:0.95em;">Everything below is Microsoft&rsquo;s original text. Read it for the concepts; the prompt-tool clicks will not match your screen.</p>
-</div>
+<h2 id="use-case-3-extend-your-agent-with-tools">Use Case #3: Extend Your Agent with Tools<a class="header-link" href="#use-case-3-extend-your-agent-with-tools" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
 
-
-<p>Build two different types of tools: a connector-based weather tool and a custom prompt analyzer tool with intelligent inputs.</p>
+<p>Build a connector-based weather tool.</p>
 
 <table>
   <thead>
@@ -2174,7 +2134,7 @@ agent decides whether to reach for the tool at all. Watching it get this wrong t
   <tbody>
     <tr>
       <td>Extend Your Agent with Tools</td>
-      <td>Connect your agent to external services and build custom analytical capabilities</td>
+      <td>Connect your agent to external services</td>
       <td>15 minutes</td>
     </tr>
   </tbody>
@@ -2182,13 +2142,13 @@ agent decides whether to reach for the tool at all. Watching it get this wrong t
 
 <p><strong>Summary of tasks</strong></p>
 
-<p>In this section, you’ll learn how to create agent tools using pre-built connectors, build custom tools with prompts and inputs, configure authentication, and add agent-level instructions for tool usage.</p>
+<p>In this section, you’ll learn how to create agent tools using pre-built connectors.</p>
 
-<p><strong>Scenario:</strong> Your Vestbjerg Maintenance Assistant needs to help users in two ways: (1) fetch real-time weather data when users ask about weather conditions, and (2) analyze user prompts and provide feedback based on prompt engineering best practices (CARE framework).</p>
+<p><strong>Scenario:</strong> Your Vestbjerg Maintenance Assistant needs to fetch real-time weather data when users ask about weather conditions.</p>
 
 <h3 id="objective-2">Objective<a class="header-link" href="#objective-2" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h3>
 
-<p>Create and configure two tools that extend your agent’s capabilities beyond simple knowledge retrieval.</p>
+<p>Create and configure a tool that extends your agent’s capabilities beyond simple knowledge retrieval.</p>
 
 <hr>
 
@@ -2211,7 +2171,7 @@ agent decides whether to reach for the tool at all. Watching it get this wrong t
 
     <blockquote class="notice notice--info">
       <p><strong>Note:</strong>
-The <strong>Create new</strong> tile list at the top of the dialog (Agent flow, Prompt, Model Context Protocol, Computer use) is for net-new tool types — not for selecting an existing connector. Use the search box or the <strong>Connector</strong> filter instead.</p>
+The <strong>Create new</strong> tile list at the top of the dialog (Agent flow, Model Context Protocol, Computer use) is for net-new tool types — not for selecting an existing connector. Use the search box or the <strong>Connector</strong> filter instead.</p>
     </blockquote>
   </li>
   <li>
@@ -2227,20 +2187,6 @@ The <strong>Create new</strong> tile list at the top of the dialog (Agent flow, 
     <p>Select <strong>Add and configure</strong> to add this tool to the agent.</p>
   </li>
   <li>
-    <p>Configure authentication by expanding the Additional details section and selecting <strong>Maker-provided credentials</strong> in the Credentials to use option.</p>
-
-    <blockquote class="notice notice--warning">
-      <p><strong>Important:</strong>
-Maker credentials mean the tool authenticates using YOUR account. This is suitable for testing and internal tools. For production scenarios with end users, use connection references. For anonymous APIs and APIs that use API keys, you should also set these to maker-provided credentials so the connection is configured by the maker rather than requiring end users to authenticate.</p>
-    </blockquote>
-  </li>
-  <li>
-    <p>In the <strong>Inputs</strong> section, find the <strong>Units</strong> input. Change it from <strong>Fill with AI</strong> to <strong>Custom</strong>.</p>
-  </li>
-  <li>
-    <p>Click into the value field and select <strong>Imperial</strong> or <strong>Metric</strong> depending on your preference.</p>
-  </li>
-  <li>
     <p>Review the tool configuration and select <strong>Save</strong>.</p>
   </li>
 </ol>
@@ -2254,141 +2200,20 @@ Maker credentials mean the tool authenticates using YOUR account. This is suitab
   <li>
     <p>Ask the following question:</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>What is the weather?
-</code></pre></div>    </div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>What is the weather today? I need to do outdoor work on the cooling tower.</code></pre></div>    </div>
   </li>
   <li>
     <p>When the agent asks for a location, respond:</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>Orlando
-</code></pre></div>    </div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>Vestbjerg, Denmark</code></pre></div>    </div>
   </li>
   <li>
-    <p>Review the weather information returned by the agent. Notice how it uses the tool to fetch real-time data. Also notice that the agent automatically used the <strong>Imperial</strong> or <strong>Metric</strong> unit you selected earlier without asking the user. This is because you set that input to a custom value instead of letting the AI fill it dynamically.</p>
+    <p>Review the weather information returned by the agent. Notice how it uses the tool to fetch real-time data.</p>
 
     <blockquote class="notice notice--success">
       <p><strong>Tip:</strong>
 If the agent doesn’t use the tool automatically, check that the tool is enabled and that you’ve saved your agent configuration.</p>
     </blockquote>
-  </li>
-</ol>
-
-<h4 id="create-a-custom-prompt-analyzer-tool">Create a Custom Raise Maintenance Request Tool<a class="header-link" href="#create-a-custom-prompt-analyzer-tool" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h4>
-
-<ol>
-  <li>
-    <p>Select <strong>Overview</strong> in the agent’s top navigation bar.</p>
-  </li>
-  <li>
-    <p>Scroll down to the <strong>Tools</strong> pane. This is the same list of tools from the agent’s top navigation bar  <strong>Tools</strong> option.</p>
-  </li>
-  <li>
-    <p>Select <strong>Add tool</strong> to add another tool.</p>
-  </li>
-  <li>
-    <p>In the <strong>Create new</strong> section, select <strong>Prompt</strong>.</p>
-
-    <blockquote class="notice notice--info">
-      <p><strong>Note:</strong>
-The first time you open the Prompt builder, a <strong>Define your intent</strong> product tour (1 of 3) appears as a coachmark overlay. Click <strong>X</strong> to dismiss it (or step through with <strong>Next</strong>) before continuing.</p>
-    </blockquote>
-  </li>
-  <li>
-    <p>Select the current name for example, <strong>Custom prompt…</strong> at the top left and change the name to <strong>Raise Maintenance Request</strong>.</p>
-  </li>
-  <li>
-    <p>In the <strong>Instructions</strong> section, add the following:</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>Raise a maintenance request for the fault the technician has described. Use the asset tag, a short summary, the full fault description in their own words, and choose a priority of Routine, Urgent or Safety based on what they said. Read the drafted request back and wait for confirmation before submitting it.
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>In the instructions you just pasted select ** (replace with text)**.</p>
-  </li>
-  <li>
-    <p>With ** (replace with text)** still selected, in the lower left of the dialog, select <strong>Add content</strong></p>
-  </li>
-  <li>
-    <p>Select <strong>Text</strong> from the list of content types.</p>
-  </li>
-  <li>
-    <p>Enter <strong>PromptToAnalyze</strong> for the name.</p>
-  </li>
-  <li>
-    <p>Enter <strong>Summarize this text: “Text”</strong> for the sample data.  This will be used to test the prompt.</p>
-  </li>
-  <li>
-    <p>Select <strong>Close</strong>.</p>
-  </li>
-  <li>
-    <p>Select the <strong>Test</strong> button to test the Raise Maintenance Request prompt you just built.</p>
-  </li>
-  <li>
-    <p>In the <strong>Model response</strong> pane on the right review the model response from your test.</p>
-  </li>
-  <li>
-    <p>Select <strong>Save</strong> in the lower right to create the prompt tool.</p>
-  </li>
-  <li>
-    <p>On the Add tool dialog, select <strong>Add and configure</strong>.</p>
-  </li>
-  <li>
-    <p>Update the <strong>Description</strong> of the Raise Maintenance Request tool to the following:</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>Raises a maintenance request when a technician reports a fault that is not covered by the current work order. Use this only when the technician is describing something newly found, not when they are asking a question.
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Select <strong>Save</strong>.</p>
-  </li>
-</ol>
-
-<h4 id="add-agent-level-tool-instructions">Add Agent-Level Tool Instructions<a class="header-link" href="#add-agent-level-tool-instructions" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h4>
-
-<ol>
-  <li>
-    <p>Select the <strong>Overview</strong> tab in the top navigation bar for the agent.</p>
-  </li>
-  <li>
-    <p>In the Instructions pane, select <strong>Edit</strong></p>
-  </li>
-  <li>
-    <p>Copy and paste the following after <strong>General Guidelines</strong> and before <strong>Skills</strong>.</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code># Raising a maintenance request
-Use the Raise Maintenance Request tool when a technician reports a fault that the current work order does not cover. Always confirm the asset tag before submitting. Read the drafted request back to the technician and wait for them to confirm it. Never submit without confirmation.
-</code></pre></div>    </div>
-
-    <blockquote class="notice notice--warning">
-      <p><strong>Important:</strong>
-Agent-level instructions help the agent understand context and avoid confusion - especially when tools might be misused or misinterpreted.</p>
-    </blockquote>
-  </li>
-  <li>
-    <p>In the text you just pasted, where select <strong>Raise Maintenance Request</strong> after the <strong>Use</strong> at the beginning of what you just pasted, type / and it will bring up a dialog to select the <strong>Raise Maintenance Request</strong> tool.</p>
-  </li>
-  <li>
-    <p>Select <strong>Save</strong>.</p>
-  </li>
-</ol>
-
-<h4 id="test-the-prompt-analyzer-tool">Test the Raise Maintenance Request Tool<a class="header-link" href="#test-the-prompt-analyzer-tool" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h4>
-
-<ol>
-  <li>
-    <p>In the test panel, select <strong>Refresh</strong> or start a new conversation to reload the agent with the new tool.</p>
-  </li>
-  <li>
-    <p>Enter the following test request:</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>I have the cover off P-207 and the mechanical seal is damaged. It is not on the work order. The pump has been noisier than usual for a couple of days.
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Review the agent’s analysis. It should provide structured feedback on the prompt using the CARE framework.</p>
-  </li>
-  <li>
-    <p>Observe how the tool uses markdown formatting with bold text and bullets to make the response visually appealing.</p>
   </li>
 </ol>
 
@@ -2404,15 +2229,12 @@ Agent-level instructions help the agent understand context and avoid confusion -
 
 <ul>
   <li><strong>Connector Tools Provide Real-Time Data</strong> – Pre-built connectors offer instant access to external services without API development</li>
-  <li><strong>Prompts Enable Specialized Actions</strong> – Build purpose-built tools with custom prompts and inputs for unique business requirements</li>
-  <li><strong>Agent Instructions Guide Tool Usage</strong> – Clear agent-level instructions prevent tool misuse and ensure proper context</li>
 </ul>
 
 <p><strong>Lessons learned &amp; troubleshooting tips:</strong></p>
 
 <ul>
-  <li>If a tool doesn’t trigger, check that it’s enabled and that the agent has clear instructions about when to use it</li>
-  <li>Input descriptions are crucial - they guide the agent on WHEN to collect information and WHAT to ask for</li>
+  <li>If a tool doesn’t trigger, check that it’s enabled</li>
   <li>Test tools with various phrasings to ensure the agent recognizes different ways users might request the action</li>
 </ul>
 
@@ -2420,7 +2242,6 @@ Agent-level instructions help the agent understand context and avoid confusion -
 
 <ul>
   <li>What external services or APIs would enhance your agent’s capabilities?</li>
-  <li>What specialized analysis or processing would help your users?</li>
   <li>How would you describe tool inputs to ensure the agent collects the right information?</li>
 </ul>
 
@@ -2481,8 +2302,7 @@ Agent-level instructions help the agent understand context and avoid confusion -
   <li>
     <p>Enter the following description in the <strong>Create a topic to…</strong>:</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>Join Copilot Studio Mailing List. Let the user provide their email address, first and last name to be added to the email mailing list for copilot studio announcements.
-</code></pre></div>    </div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>Join Copilot Studio Mailing List. Let the user provide their email address, first and last name to be added to the email mailing list for copilot studio announcements.</code></pre></div>    </div>
   </li>
   <li>
     <p>Select <strong>Create</strong> to let Copilot Studio build the topic structure.</p>
@@ -2545,8 +2365,7 @@ For production scenarios, you would connect to a real backend system here. For t
   <li>
     <p>Enter the following as the message:</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>Thank you! Your information has been recorded. (In production, this would submit to the mailing list system.)
-</code></pre></div>    </div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>Thank you! Your information has been recorded. (In production, this would submit to the mailing list system.)</code></pre></div>    </div>
   </li>
   <li>Select <strong>Save</strong> to save your topic.</li>
 </ol>
@@ -2560,8 +2379,7 @@ For production scenarios, you would connect to a real backend system here. For t
   <li>
     <p>Enter the following trigger phrase:</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>I want to get notified when there is news about Copilot Studio.
-</code></pre></div>    </div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>I want to get notified when there is news about Copilot Studio.</code></pre></div>    </div>
   </li>
   <li>
     <p>The agent should recognize this intent and activate your mailing list topic.</p>
@@ -3260,6 +3078,43 @@ For production scenarios, you would connect to a real backend system here. For t
 
     
   <script src="main.min.js.download"></script>
+  <script>
+  // The copy buttons are part of the saved HTML, so the theme script never
+  // attaches its click handler to them. Attach one here that copies the code
+  // box as plain text, without leading/trailing whitespace, so pasting into
+  // Copilot does not turn the prompt into a numbered list.
+  (function () {
+    document.querySelectorAll('pre.highlight > button.clipboard-copy-button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var code = btn.parentElement.querySelector('code');
+        if (!code) return;
+        var text = code.innerText.replace(/^\s+|\s+$/g, '');
+        var done = function () {
+          btn.classList.add('copied');
+          setTimeout(function () { btn.classList.remove('copied'); }, 1500);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, function () { fallback(text) && done(); });
+        } else if (fallback(text)) {
+          done();
+        }
+      });
+    });
+    function fallback(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+      return ok;
+    }
+  })();
+  </script>
 
 
 
