@@ -2136,7 +2136,30 @@ Agents typically show citations at the bottom of responses, indicating which kno
 
 <hr>
 
-<h2 id="use-case-3-extend-your-agent-with-tools">Use Case #3: Extend Your Agent with Tools<a class="header-link" href="#use-case-3-extend-your-agent-with-tools" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
+<h2 id="use-case-3-extend-your-agent-with-tools">Use Case #3: Extend Your Agent with Tools<a class="header-link" href="#use-case-3-extend-your-agent-with-tools" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2><div style="border-left:5px solid #C76A0F;background:#FDEFE0;padding:16px 20px;margin:18px 0;font-family:Arial,sans-serif;font-size:0.95em;line-height:1.55;">
+<strong style="color:#02018C;font-size:1.05em;">Read this before you start Use Case 3</strong>
+<p style="margin:10px 0 6px;"><strong>The steps below build a &ldquo;prompt tool&rdquo;. That option no longer exists.</strong>
+When you open <em>Add tool</em> you will see Featured, Connectors, Workflows and MCP &mdash; but no Prompt.
+Microsoft removed prompt tools from this authoring experience, so the instructions from
+&ldquo;Select <em>Add new Prompt</em>&rdquo; onwards cannot be followed as written.</p>
+<p style="margin:6px 0;"><strong>Do this instead.</strong> We are adding a connector tool that writes a real record,
+which is closer to what you would build at work anyway.</p>
+<ol style="margin:8px 0 10px 18px;padding:0;">
+<li style="margin:4px 0;">On the agent, select <strong>Add tool</strong>.</li>
+<li style="margin:4px 0;">Choose the <strong>Connector</strong> filter, find <strong>SharePoint</strong>, and select the <strong>Create item</strong> action.</li>
+<li style="margin:4px 0;">Point it at the <strong>Maintenance Requests</strong> list on the Vestbjerg site.</li>
+<li style="margin:4px 0;">Give the tool this description:<br>
+<span style="font-family:Consolas,monospace;font-size:0.92em;display:block;background:#fff;padding:8px 10px;margin:6px 0;border:1px solid #e3d6c8;">Raises a maintenance request when a technician reports a fault that the current work order does not cover. Use this only when the technician is describing something newly found, not when they are asking a question.</span></li>
+<li style="margin:4px 0;">Then add the field mapping to your agent&rsquo;s <strong>instructions</strong> &mdash; the agent decides what goes in each column, so tell it:<br>
+<span style="font-family:Consolas,monospace;font-size:0.92em;display:block;background:#fff;padding:8px 10px;margin:6px 0;border:1px solid #e3d6c8;">When you raise a request: put a one-line summary starting with the asset tag in Title; put the technician&rsquo;s full description in their own words in Fault description; choose exactly one of Routine, Urgent or Safety for Priority. Read the drafted request back and wait for confirmation before submitting it.</span></li>
+<li style="margin:4px 0;">Test it with: <em>I have the cover off P-207 and the mechanical seal is damaged. It is not on the work order.</em></li>
+</ol>
+<p style="margin:8px 0 0;"><strong>Why bother writing a deliberately vague description first?</strong>
+Try <em>&ldquo;for requests&rdquo;</em> before the proper one above. The description is not documentation &mdash; it is how the
+agent decides whether to reach for the tool at all. Watching it get this wrong teaches more than getting it right first time.</p>
+<p style="margin:8px 0 0;color:#6b5a48;font-size:0.95em;">Everything below is Microsoft&rsquo;s original text. Read it for the concepts; the prompt-tool clicks will not match your screen.</p>
+</div>
+
 
 <p>Build two different types of tools: a connector-based weather tool and a custom prompt analyzer tool with intelligent inputs.</p>
 
