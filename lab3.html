@@ -1802,8 +1802,7 @@ If you are completing this lab as part of a CAT-led workshop or bootcamp, you do
   <li>
     <p>Enter the following for the <strong>Description</strong></p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code> This agent answers questions about spare parts for Vestbjerg plant equipment: part numbers, specifications, expected service life and where the part is held in the store.
-</code></pre></div>    </div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>This agent answers questions about spare parts for Vestbjerg plant equipment: part numbers, specifications, expected service life and where the part is held in the store.</code></pre></div>    </div>
 
     <blockquote class="notice notice--info">
       <p><strong>Note:</strong>
@@ -1818,8 +1817,7 @@ The description helps the parent agent understand when to route conversations to
   <li>
     <p>Input the following into the <strong>Instructions</strong> section.</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code> This agent helps technicians identify the correct spare part for a piece of equipment. Give the part number, the specification and the store location. If a part has an expected service life, say what it is. Do not raise maintenance requests — that is handled elsewhere.
-</code></pre></div>    </div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>This agent helps technicians identify the correct spare part for a piece of equipment. Give the part number, the specification and the store location. If a part has an expected service life, say what it is. Do not raise maintenance requests — that is handled elsewhere.</code></pre></div>    </div>
 
     <blockquote class="notice notice--success">
       <p><strong>Tip:</strong>
@@ -1876,9 +1874,8 @@ Child agents can have their own dedicated knowledge sources. This keeps knowledg
   <li>
     <p>Add the following orchestration instructions just before the # General Guidelines paragraph of the instructions. Notice the <code class="language-plaintext highlighter-rouge">(replace this text)</code> placeholder — you’ll replace it with a direct reference to the child agent in the next step.</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code> # Parts and spares
- Use (replace this text) when asked about a spare part, a part number, a specification or what is held in the store. Never use it when a technician is reporting a fault that needs a maintenance request raised.
-</code></pre></div>    </div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code># Parts and spares
+ Use (replace this text) when asked about a spare part, a part number, a specification or what is held in the store. Never use it when a technician is reporting a fault that needs a maintenance request raised.</code></pre></div>    </div>
   </li>
   <li>
     <p>Select the <strong><code class="language-plaintext highlighter-rouge">(replace this text)</code></strong> placeholder in the paragraph you just added, then type <code class="language-plaintext highlighter-rouge">/</code> to open the dropdown menu. This lists your agent’s available tools, topics, child agents, knowledge sources, and more. Select <strong>Parts and Spares</strong> from the list to create a direct reference to the child agent, replacing the placeholder text.</p>
@@ -1926,8 +1923,7 @@ Disabled child agents won’t be invoked by the parent agent. Always verify chil
   <li>
     <p>Ask a question that should trigger the child agent:</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code> What is the part number for the mechanical seal on P-207, and where is it held?
-</code></pre></div>    </div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>What is the part number for the mechanical seal on P-207, and where is it held?</code></pre></div>    </div>
   </li>
   <li>Observe the agent’s response. It should:
     <ul>
@@ -1945,8 +1941,7 @@ Disabled child agents won’t be invoked by the parent agent. Always verify chil
   <li>
     <p>Now test the orchestration instructions by asking a question that should NOT use the child agent:</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code> I have the cover off P-207 and the mechanical seal is damaged. It is not on the work order.
-</code></pre></div>    </div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>I have the cover off P-207 and the mechanical seal is damaged. It is not on the work order.</code></pre></div>    </div>
   </li>
   <li>
     <p>Verify that the parent agent uses the Raise Maintenance Request tool (from the previous lab) instead of routing to the child agent.</p>
@@ -2950,6 +2945,43 @@ Always test your agent on each deployed channel. Some features or formatting may
 
     
   <script src="main.min.js.download"></script>
+  <script>
+  // The copy buttons are part of the saved HTML, so the theme script never
+  // attaches its click handler to them. Attach one here that copies the code
+  // box as plain text, without leading/trailing whitespace, so pasting into
+  // Copilot does not turn the prompt into a numbered list.
+  (function () {
+    document.querySelectorAll('pre.highlight > button.clipboard-copy-button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var code = btn.parentElement.querySelector('code');
+        if (!code) return;
+        var text = code.innerText.replace(/^\s+|\s+$/g, '');
+        var done = function () {
+          btn.classList.add('copied');
+          setTimeout(function () { btn.classList.remove('copied'); }, 1500);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, function () { fallback(text) && done(); });
+        } else if (fallback(text)) {
+          done();
+        }
+      });
+    });
+    function fallback(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+      return ok;
+    }
+  })();
+  </script>
 
 
 
