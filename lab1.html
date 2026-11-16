@@ -66,9 +66,18 @@
   /* The Lab Assistant chat widget was saved from the source site without its
      styles or script, so it rendered as a page-wide icon. Hide it. */
   .wc-tag, .wc-panel, .wc-nudge { display: none !important; }
+  /* Keep participants on the current lab: hide breadcrumbs, the "Part of"
+     module link, the workshop rail (Prev/Next/agenda) and the bottom
+     Previous/Next cards. */
+  .breadcrumbs, .lab-module-link, .event-rail, .event-navpair, .lab-meta-pill-feedback { display: none !important; }
+  /* The saved page already has a permalink icon on each heading and the
+     site script adds a second one on load; hide the duplicate. */
+  .header-link + .header-link { display: none !important; }
+  /* Keep screenshots from being blown up to the full text width. */
+  .page__content img { max-width: min(100%, 720px); height: auto; }
 </style>
-<link rel="stylesheet" href="all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"></noscript>
 
 
 
@@ -112,9 +121,9 @@
 
 
     <div class="initial-content" style="padding-top:2rem;">
-<div style="max-width:1100px;margin:0 auto;padding:18px 20px 14px 20px;border-bottom:3px solid #FF831D;display:flex;align-items:center;gap:18px;">
-  <img src="columbus-logo.svg" alt="Columbus" style="height:30px;width:auto;flex:0 0 auto;">
-  <span style="font-family:Arial,Helvetica,sans-serif;font-size:0.9em;color:#02018C;letter-spacing:.04em;text-transform:uppercase;">Agent in a Day</span>
+<div style="max-width:1600px;margin:0 auto;padding:20px 16px 16px 16px;border-bottom:3px solid #FF831D;display:flex;align-items:center;gap:18px;">
+  <img src="columbus-logo.svg" alt="Columbus" style="height:42px;width:auto;flex:0 0 auto;">
+  <span style="font-family:Arial,Helvetica,sans-serif;font-size:1.05em;color:#02018C;letter-spacing:.04em;text-transform:uppercase;">Agent in a Day</span>
 </div>
 
       
@@ -165,7 +174,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-bookmark"></i> On this page</h4></header>
-              <ul class="toc__menu"><li class=""><a href="#lab-details">Lab Details</a></li><li class=""><a href="#why-this-matters">Why This Matters</a></li><li class=""><a href="#introduction">Introduction</a></li><li class=""><a href="#core-concepts-overview">Core Concepts Overview</a></li><li class=""><a href="#documentation-and-additional-training-links">Documentation and Additional Training Links</a></li><li class=""><a href="#prerequisites">Prerequisites</a></li><li class=""><a href="#summary-of-targets">Summary of Targets</a></li><li class=""><a href="#use-cases-covered">Use Cases Covered</a></li><li class=""><a href="#instructions-by-use-case">Instructions by Use Case</a></li><li class=""><a href="#use-case-1-create-a-web-based-learning-assistant">Use Case #1: Create a web-grounded maintenance assistant</a><ul><li class=""><a href="#objective">Objective</a></li><li class=""><a href="#step-by-step-instructions">Step-by-step instructions</a></li><li><a href="#congratulations-youve-created-your-first-web-based-copilot-agent">Congratulations! You’ve created your first web-grounded Copilot agent.</a></li><li><a href="#test-your-understanding">Test your understanding</a></li></ul></li><li><a href="#use-case-2-build-an-advanced-sharepoint-integrated-sales-assistant">Use Case #2: Build an advanced SharePoint-integrated sales assistant</a><ul><li><a href="#objective-1">Objective</a></li><li><a href="#step-by-step-instructions-1">Step-by-step instructions</a></li><li><a href="#congratulations-youve-created-an-advanced-sharepoint-integrated-copilot-agent">Congratulations! You’ve created an advanced SharePoint-integrated Copilot agent!</a></li><li><a href="#test-your-understanding-1">Test your understanding</a></li></ul></li><li><a href="#use-case-3-deep-analysis-with-the-researcher-agent">Use Case #3: Deep analysis with the Researcher agent</a><ul><li><a href="#objective-2">Objective</a></li><li><a href="#step-by-step-instructions-2">Step-by-step instructions</a></li><li><a href="#congratulations-youve-used-the-researcher-agent-for-deep-document-analysis">Congratulations! You’ve used the Researcher agent for deep document analysis!</a></li><li><a href="#test-your-understanding-2">Test your understanding</a></li></ul></li><li><a href="#use-case-4-financial-modeling-with-the-analyst-agent">Use Case #4: Financial modeling with the Analyst agent</a><ul><li><a href="#objective-3">Objective</a></li><li><a href="#step-by-step-instructions-3">Step-by-step instructions</a></li><li><a href="#congratulations-youve-used-the-analyst-agent-for-financial-modeling">Congratulations! You’ve used the Analyst agent for financial modeling!</a></li><li><a href="#test-your-understanding-3">Test your understanding</a></li></ul></li><li><a href="#summary-of-learnings">Summary of Learnings</a></li><li><a href="#conclusions--recommendations">Conclusions &amp; Recommendations</a></li></ul>
+              <ul class="toc__menu"><li class=""><a href="#why-this-matters">Why This Matters</a></li><li class=""><a href="#introduction">Introduction</a></li><li class=""><a href="#core-concepts-overview">Core Concepts Overview</a></li><li class=""><a href="#documentation-and-additional-training-links">Documentation and Additional Training Links</a></li><li class=""><a href="#prerequisites">Prerequisites</a></li><li class=""><a href="#summary-of-targets">Summary of Targets</a></li><li class=""><a href="#use-cases-covered">Use Cases Covered</a></li><li class=""><a href="#instructions-by-use-case">Instructions by Use Case</a></li><li class=""><a href="#use-case-1-create-a-web-based-learning-assistant">Use Case #1: Create a web-grounded maintenance assistant</a><ul><li class=""><a href="#objective">Objective</a></li><li class=""><a href="#step-by-step-instructions">Step-by-step instructions</a></li><li><a href="#congratulations-youve-created-your-first-web-based-copilot-agent">Congratulations! You’ve created your first web-grounded Copilot agent.</a></li><li><a href="#test-your-understanding">Test your understanding</a></li></ul></li><li><a href="#use-case-2-build-an-advanced-sharepoint-integrated-sales-assistant">Use Case #2: Build an advanced SharePoint-integrated sales assistant</a><ul><li><a href="#objective-1">Objective</a></li><li><a href="#step-by-step-instructions-1">Step-by-step instructions</a></li><li><a href="#congratulations-youve-created-an-advanced-sharepoint-integrated-copilot-agent">Congratulations! You’ve created an advanced SharePoint-integrated Copilot agent!</a></li><li><a href="#test-your-understanding-1">Test your understanding</a></li></ul></li><li><a href="#use-case-3-deep-analysis-with-the-researcher-agent">Use Case #3: Deep analysis with the Researcher agent</a><ul><li><a href="#objective-2">Objective</a></li><li><a href="#step-by-step-instructions-2">Step-by-step instructions</a></li><li><a href="#congratulations-youve-used-the-researcher-agent-for-deep-document-analysis">Congratulations! You’ve used the Researcher agent for deep document analysis!</a></li><li><a href="#test-your-understanding-2">Test your understanding</a></li></ul></li><li><a href="#use-case-4-financial-modeling-with-the-analyst-agent">Use Case #4: Financial modeling with the Analyst agent</a><ul><li><a href="#objective-3">Objective</a></li><li><a href="#step-by-step-instructions-3">Step-by-step instructions</a></li><li><a href="#congratulations-youve-used-the-analyst-agent-for-financial-modeling">Congratulations! You’ve used the Analyst agent for financial modeling!</a></li><li><a href="#test-your-understanding-3">Test your understanding</a></li></ul></li><li><a href="#summary-of-learnings">Summary of Learnings</a></li><li><a href="#conclusions--recommendations">Conclusions &amp; Recommendations</a></li></ul>
             </nav>
           </aside>
         
@@ -1478,20 +1487,6 @@
       </div><h1>Build Progressive AI Assistants with Agent Builder in Microsoft 365</h1>
   
   <p class="lab-header-desc">Master agent creation from basic web-grounded assistants to advanced SharePoint-integrated agents with code interpreter and image generation capabilities.</p>
-  
-  
-  <p class="lab-header-updated">
-    Content last updated:
-    <time datetime="2026-05-12T17:15:09+00:00">5/13/2026</time>
-  </p>
-  
-  <div class="lab-header-meta">
-    <span class="lab-meta-pill lab-meta-pill-level-100">Level 100</span>
-    <span class="lab-meta-pill lab-meta-pill-duration">30 min</span>
-    <span class="lab-meta-pill lab-meta-pill-section">Core Learning Path</span>
-    
-    <a href="https://github.com/microsoft/mcs-labs/issues/new?template=bug_report.yml&amp;type=Bug&amp;labels=lab&amp;title=%5Bagent-builder-m365%5D+&amp;lab=agent-builder-m365" target="_blank" rel="noopener noreferrer" class="lab-meta-pill lab-meta-pill-feedback">Report an issue</a>
-  </div>
 </div>
 
 <!-- Event navigation rail. Hidden by default; _includes/event-nav/script.html
@@ -1539,29 +1534,6 @@
 <h1 id="build-progressive-ai-assistants-with-agent-builder-in-microsoft-365">Build Progressive AI Assistants with Agent Builder in Microsoft 365<a class="header-link" href="#build-progressive-ai-assistants-with-agent-builder-in-microsoft-365" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h1>
 
 <p>Master agent creation from basic web-grounded assistants to advanced SharePoint-integrated agents with code interpreter and image generation capabilities.</p>
-
-<hr>
-
-<h2 id="lab-details" class="">Lab Details<a class="header-link" href="#lab-details" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Level</th>
-      <th>Persona</th>
-      <th>Duration</th>
-      <th>Purpose</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>100-200</td>
-      <td>Maker (Basic to Intermediate)</td>
-      <td>30 minutes</td>
-      <td>After completing this lab, attendees will be able to create progressively sophisticated Copilot agents, starting with simple web-based knowledge sources, advancing to SharePoint integration, and mastering advanced AI capabilities like code interpretation, data analysis, and image generation.</td>
-    </tr>
-  </tbody>
-</table>
 
 <hr>
 
@@ -1850,7 +1822,7 @@ Both Microsoft 365 Copilot and Copilot Chat are designed for internal, employee-
 
 <ul>
   <li>
-    <p>2. Type the following prompt and select <strong>Send</strong>:</p>
+    <p>2. Type the following prompt and select <strong>Send</strong> (<code class="language-plaintext highlighter-rouge">➤</code>):</p>
 
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>Tell me about labs that my organization has available to learn about Copilot Studio</code></pre></div>    </div>
   </li>
@@ -1868,7 +1840,7 @@ Both Microsoft 365 Copilot and Copilot Chat are designed for internal, employee-
 
 <ol>
   <li>
-    <p>Test the basic experience by typing the following into the Message Copilot input area and then selecting send:</p>
+    <p>Test the basic experience by typing the following into the Message Copilot input area and then selecting <strong>Send</strong> (<code class="language-plaintext highlighter-rouge">➤</code>):</p>
 
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>What are new features in the Microsoft Copilot Studio roadmap?</code></pre></div>    </div>
 
@@ -1886,7 +1858,7 @@ Both Microsoft 365 Copilot and Copilot Chat are designed for internal, employee-
     <p>On the left side navigation pane, select <strong>Agents</strong>, then select <strong>New agent</strong>.</p>
   </li>
   <li>
-    <p>Notice that you can explore existing available templates. For this lab, paste the following into the <strong>Message Agent Builder</strong> input area at the top of the form, and then select Send.</p>
+    <p>Notice that you can explore existing available templates. For this lab, paste the following into the <strong>Message Agent Builder</strong> input area at the top of the form, and then select <strong>Send</strong> (<code class="language-plaintext highlighter-rouge">➤</code>).</p>
 
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>I want to build an assistant for maintenance technicians working on pumps and rotating equipment. When someone describes a problem, it should find the relevant procedure or specification and explain it plainly. It should always say which source its answer came from, and say so plainly when it does not have the information rather than guessing.</code></pre></div>    </div>
 
@@ -1896,7 +1868,7 @@ From here, you will find that the conversational creation experience might diffe
     </blockquote>
   </li>
   <li>
-    <p>Input the following prompt to set the agent’s name and tone, then press send. (This will rename the agent if Agent Builder proposed a different name, and apply the desired tone in either case.)</p>
+    <p>Input the following prompt to set the agent’s name and tone, then press <strong>Send</strong> (<code class="language-plaintext highlighter-rouge">➤</code>). (This will rename the agent if Agent Builder proposed a different name, and apply the desired tone in either case.)</p>
 
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>The name of the agent should be Maintenance Assistant. Your tone should be brief and practical — you are talking to someone standing next to a machine who wants an answer, not a conversation.</code></pre></div>    </div>
   </li>
@@ -1930,7 +1902,7 @@ After both prompts, review the <strong>Configure</strong> pane on the right and 
     <p>Now review the <strong>Configure</strong> tab on the right side of Agent Builder. Notice how all of your previous interactions have built the configuration of your agent, its name, description, instructions, knowledge sources and starter prompts — populated incrementally during the conversational creation. Feel free to tweak them!</p>
   </li>
   <li>
-    <p>Fix any issue like max character limit for starter prompt titles.</p>
+    <p>Check the <strong>Configure</strong> tab for warnings. If a field is marked in red — for example a starter prompt title that exceeds the maximum character limit — shorten the text until the warning disappears.</p>
   </li>
   <li>
     <p>You can test your agent in the <strong>Preview</strong> tab. When ready, select <strong>Create</strong> in the upper right corner to finish creating your agent.</p>
@@ -1943,15 +1915,23 @@ After both prompts, review the <strong>Configure</strong> pane on the right and 
 
 <ol>
   <li>
-    <p>You can use the generated link to share your agents with other users.</p>
-  </li>
-  <li>
-    <p>Select <strong>Go to agent</strong>.</p>
+    <p>Open your agent: select <strong>Agents</strong> in the left navigation pane, then scroll until you see <strong>Maintenance Assistant</strong> in the list and select it.</p>
+
+    <p><img src="share-agents-nav.png" alt="Agents in the left navigation pane"></p>
+
+    <p><img src="share-agents-list.png" alt="Maintenance Assistant in the list of agents"></p>
 
     <p><img src="maintenance-assistant-start.png" alt="Maintenance Assistant start page"></p>
   </li>
   <li>
-    <p>Try your agent by selecting one of the prompts or by pasting the following prompt and selecting Send:</p>
+    <p>To share your agent with other users, select the three dots (<code class="language-plaintext highlighter-rouge">...</code>, <strong>Settings and more</strong>) in the upper right corner, and then select <strong>Share agent</strong>. You can now choose who you want to share your agent with — add a name, group or email, or copy the chat link.</p>
+
+    <p><img src="share-agent-menu.png" alt="Settings and more menu with Share agent"></p>
+
+    <p><img src="share-agent-dialog.png" alt="Share Maintenance Assistant dialog"></p>
+  </li>
+  <li>
+    <p>Try your agent by selecting one of the prompts or by pasting the following prompt and selecting <strong>Send</strong> (<code class="language-plaintext highlighter-rouge">➤</code>):</p>
   </li>
 </ol>
 
@@ -1966,7 +1946,7 @@ If your training tenant is getting throttled because of lack of AI capacity (to 
 
 <blockquote class="notice notice--warning">
   <p><strong>Important:</strong><br>
-If you need to update a declarative agent, select <code class="language-plaintext highlighter-rouge">...</code> next to the agent name and select <strong>Edit</strong>, or select <strong>Agents</strong> in the left navigation pane and then Maintenance Assistant from the list of your agents.</p>
+If you need to update a declarative agent, select <strong>Agents</strong> in the left navigation pane, find <strong>Maintenance Assistant</strong> in the list of your agents and select <strong>Edit</strong> from its menu.</p>
 </blockquote>
 
 <hr>
@@ -2077,7 +2057,7 @@ If you need to update a declarative agent, select <code class="language-plaintex
     <p>On the left side pane, select <strong>Agents</strong>, then select <strong>New agent</strong>.</p>
   </li>
   <li>
-    <p>In the <strong>Message Agent Builder</strong> textbox at the top of the new agent page, paste the following prompt and press Send (or Enter).</p>
+    <p>In the <strong>Message Agent Builder</strong> textbox at the top of the new agent page, paste the following prompt and press <strong>Send</strong> (<code class="language-plaintext highlighter-rouge">➤</code>) (or Enter).</p>
 
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>You are a Sales Admin Assistant. Your job is to help sales managers track revenue and identify trends across product lines. You understand product hierarchies, time periods (e.g. quarters, fiscal years), and sales metrics. Users can ask questions like 'Graph the sales for the last 2 years with a breakdown per product line and quarter'. You always respond in a friendly and professional tone, aiming to be helpful and insightful.</code></pre></div>    </div>
   </li>
@@ -2098,6 +2078,11 @@ If you need to update a declarative agent, select <code class="language-plaintex
       <li>Under <strong>Knowledge</strong>, select <strong>Add knowledge</strong> and add the Sales Policy Document.docx from the Sales folder</li>
       <li>You will see it being added under <strong>Work content</strong> → <strong>Cloud files</strong> → <strong>SharePoint</strong> in the knowledge section of the agent</li>
     </ul>
+
+    <blockquote class="notice notice--success">
+      <p><strong>Tip:</strong>
+If the Sales Policy document doesn’t show up automatically when you select <strong>Add knowledge</strong>, search for it by name in the dialog. If it still doesn’t appear, go back to the <strong>Sales</strong> folder in SharePoint, open the document, copy its link (<strong>Share</strong> → <strong>Copy link</strong>) and paste the link into the knowledge field instead.</p>
+    </blockquote>
   </li>
 </ol>
 
@@ -2145,7 +2130,7 @@ You can explore additional <strong>knowledge</strong> capabilities:</p>
     <p>Select <strong>Go to agent</strong> to start testing.</p>
   </li>
   <li>
-    <p>First, test the agent’s <strong>knowledge</strong> of your sales policy. Copy/paste the following prompt into the <strong>Message [your agent name]</strong> input area and select Send:</p>
+    <p>First, test the agent’s <strong>knowledge</strong> of your sales policy. Copy/paste the following prompt into the <strong>Message [your agent name]</strong> input area and select <strong>Send</strong> (<code class="language-plaintext highlighter-rouge">➤</code>):</p>
 
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>What are the key guidelines in our sales policy regarding customer discounts?</code></pre></div>    </div>
   </li>
@@ -2159,7 +2144,11 @@ You can explore additional <strong>knowledge</strong> capabilities:</p>
 <h4 id="test-image-generation">Test image generation<a class="header-link" href="#test-image-generation" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h4>
 
 <ol>
-  <li>Select the <strong>New chat</strong> button to reset, then test the <strong>image generation</strong> capability with a relevant request:</li>
+  <li>
+    <p>Select the <strong>New chat</strong> button to reset — it’s the blue icon (a pencil in a square) in the upper right corner of the agent’s chat. Then test the <strong>image generation</strong> capability with a relevant request:</p>
+
+    <p><img src="new-chat-button.png" alt="New chat button in the upper right corner of the agent chat"></p>
+  </li>
 </ol>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>Design a professional badge for the first place winner of our sales contest. It should look modern and premium, with gold colors, the text '1st Place – Sales Contest', and a ribbon or trophy element.</code></pre></div></div>
@@ -2271,6 +2260,11 @@ The Researcher agent is one of Microsoft’s <strong>frontier agents</strong> �
   </li>
   <li>
     <p>(Recommended) In the Researcher chat header (top right), click the <strong>mode picker pill</strong> (defaults to <strong>Auto</strong>) and switch to <strong>Critique</strong> (<code class="language-plaintext highlighter-rouge">GPT responses, refined by Claude (Frontier)</code>). Critique mode produces more reliable convergence on long PDFs than Auto in the current product. The other options (<code class="language-plaintext highlighter-rouge">Model Council</code>, <code class="language-plaintext highlighter-rouge">Claude</code>) are also valid but tend to be slower.</p>
+
+    <blockquote class="notice notice--info">
+      <p><strong>Note:</strong>
+The available modes vary between tenants. If you don’t see <strong>Critique</strong> (for example, you only have <strong>Auto</strong>, <strong>Claude</strong> and <strong>GPT</strong>), just keep <strong>Auto</strong> and continue.</p>
+    </blockquote>
   </li>
   <li>
     <p>Upload the <a href="https://github.com/microsoft/mcs-labs/raw/main/labs/agent-builder-m365/Contoso_Grand_Hotel_Performance_Report.pdf" target="_blank" rel="noopener noreferrer"><strong>Contoso_Grand_Hotel_Performance_Report.pdf</strong></a> by clicking the <strong>+</strong> (Add and manage sources) button next to the message input, choosing <strong>Upload images and files</strong>, and selecting the file from your local machine. Wait for the upload confirmation before continuing.</p>
@@ -2281,7 +2275,7 @@ The Researcher agent is one of Microsoft’s <strong>frontier agents</strong> �
 
 <ol>
   <li>
-    <p>Once the file is uploaded, copy and paste the following prompt and select <strong>Send</strong>:</p>
+    <p>Once the file is uploaded, copy and paste the following prompt and select <strong>Send</strong> (<code class="language-plaintext highlighter-rouge">➤</code>):</p>
 
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>Create an executive briefing for the GM that summarizes the five most urgent operational issues, their root causes, financial impact, and recommended fixes — all sourced from this report.</code></pre></div>    </div>
 
@@ -2329,7 +2323,7 @@ This is the kind of analysis that demonstrates the true power of the Researcher 
   <li><strong>Prompt design matters</strong> — Asking for “root causes” and “gap analysis” forces Researcher to reason deeply rather than simply summarize</li>
   <li><strong>Follow-up prompts leverage context</strong> — The second prompt builds on the first, allowing Researcher to refine and extend its analysis</li>
   <li><strong>Frontier agents are purpose-built</strong> — Researcher uses advanced reasoning models optimized for deep analysis, unlike general chat which is optimized for conversational responses</li>
-  <li><strong>Mode matters for long PDFs</strong> — Critique mode tends to converge more reliably than Auto on large documents. And because Researcher is <em>slow</em> by design, treat its prompts as fire-and-forget: submit, switch tasks, come back when the chat list signals completion.</li>
+  <li><strong>Mode matters for long PDFs</strong> — Where available, Critique mode tends to converge more reliably than Auto on large documents. And because Researcher is <em>slow</em> by design, treat its prompts as fire-and-forget: submit, switch tasks, come back when the chat list signals completion.</li>
 </ul>
 
 <p><strong>Challenge: Apply this to your own use case</strong></p>
@@ -2406,7 +2400,7 @@ You’re using the <a href="https://github.com/microsoft/mcs-labs/raw/main/labs/
 
 <ol>
   <li>
-    <p>Copy and paste the following prompt and select <strong>Send</strong>:</p>
+    <p>Copy and paste the following prompt and select <strong>Send</strong> (<code class="language-plaintext highlighter-rouge">➤</code>):</p>
 
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>Using the recommendation data from Section 16 of this hotel performance report, build a detailed ROI analysis for each of the 10 recommendations (R1 through R10). For each recommendation, extract the investment cost and estimated annual ROI from the report, then calculate:
 
