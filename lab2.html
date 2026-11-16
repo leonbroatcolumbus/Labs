@@ -66,9 +66,18 @@
   /* The Lab Assistant chat widget was saved from the source site without its
      styles or script, so it rendered as a page-wide icon. Hide it. */
   .wc-tag, .wc-panel, .wc-nudge { display: none !important; }
+  /* Keep participants on the current lab: hide breadcrumbs, the "Part of"
+     module link, the workshop rail (Prev/Next/agenda) and the bottom
+     Previous/Next cards. */
+  .breadcrumbs, .lab-module-link, .event-rail, .event-navpair, .lab-meta-pill-feedback { display: none !important; }
+  /* The saved page already has a permalink icon on each heading and the
+     site script adds a second one on load; hide the duplicate. */
+  .header-link + .header-link { display: none !important; }
+  /* Keep screenshots from being blown up to the full text width. */
+  .page__content img { max-width: min(100%, 720px); height: auto; }
 </style>
-<link rel="stylesheet" href="all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"></noscript>
 
 
 
@@ -112,9 +121,9 @@
 
 
     <div class="initial-content" style="padding-top:2rem;">
-<div style="max-width:1100px;margin:0 auto;padding:18px 20px 14px 20px;border-bottom:3px solid #FF831D;display:flex;align-items:center;gap:18px;">
-  <img src="columbus-logo.svg" alt="Columbus" style="height:30px;width:auto;flex:0 0 auto;">
-  <span style="font-family:Arial,Helvetica,sans-serif;font-size:0.9em;color:#02018C;letter-spacing:.04em;text-transform:uppercase;">Agent in a Day</span>
+<div style="max-width:1600px;margin:0 auto;padding:20px 16px 16px 16px;border-bottom:3px solid #FF831D;display:flex;align-items:center;gap:18px;">
+  <img src="columbus-logo.svg" alt="Columbus" style="height:42px;width:auto;flex:0 0 auto;">
+  <span style="font-family:Arial,Helvetica,sans-serif;font-size:1.05em;color:#02018C;letter-spacing:.04em;text-transform:uppercase;">Agent in a Day</span>
 </div>
 
       
@@ -165,7 +174,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-bookmark"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#lab-details">Lab Details</a></li><li><a href="#why-this-matters">Why This Matters</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#core-concepts-overview">Core Concepts Overview</a></li><li><a href="#documentation-and-additional-training-links">Documentation and Additional Training Links</a></li><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#summary-of-targets">Summary of Targets</a></li><li><a href="#use-cases-covered">Use Cases Covered</a></li><li><a href="#instructions-by-use-case">Instructions by Use Case</a></li><li><a href="#use-case-1-create-and-configure-your-first-agent">Use Case #1: Create and Configure Your First Agent</a><ul><li><a href="#objective">Objective</a></li><li><a href="#step-by-step-instructions">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-1">Congratulations! You’ve completed Use Case 1!</a></li><li><a href="#test-your-understanding">Test your understanding</a></li></ul></li><li><a href="#use-case-2-enhance-agent-intelligence-with-knowledge-sources">Use Case #2: Enhance Agent Intelligence with Knowledge Sources</a><ul><li><a href="#objective-1">Objective</a></li><li><a href="#step-by-step-instructions-1">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-2">Congratulations! You’ve completed Use Case 2!</a></li><li><a href="#test-your-understanding-1">Test your understanding</a></li></ul></li><li><a href="#use-case-3-extend-your-agent-with-tools">Use Case #3: Extend Your Agent with Tools</a><ul><li><a href="#objective-2">Objective</a></li><li><a href="#step-by-step-instructions-2">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-3">Congratulations! You’ve completed Use Case 3!</a></li><li><a href="#test-your-understanding-2">Test your understanding</a></li></ul></li><li><a href="#use-case-4-build-custom-topics-for-structured-conversations">Use Case #4: Build Custom Topics for Structured Conversations</a><ul><li><a href="#objective-3">Objective</a></li><li><a href="#step-by-step-instructions-3">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-4">Congratulations! You’ve completed Use Case 4!</a></li><li><a href="#test-your-understanding-3">Test your understanding</a></li></ul></li><li><a href="#summary-of-learnings">Summary of learnings</a><ul><li><a href="#conclusions-and-recommendations">Conclusions and recommendations</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#why-this-matters">Why This Matters</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#core-concepts-overview">Core Concepts Overview</a></li><li><a href="#documentation-and-additional-training-links">Documentation and Additional Training Links</a></li><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#summary-of-targets">Summary of Targets</a></li><li><a href="#use-cases-covered">Use Cases Covered</a></li><li><a href="#instructions-by-use-case">Instructions by Use Case</a></li><li><a href="#use-case-1-create-and-configure-your-first-agent">Use Case #1: Create and Configure Your First Agent</a><ul><li><a href="#objective">Objective</a></li><li><a href="#step-by-step-instructions">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-1">Congratulations! You’ve completed Use Case 1!</a></li><li><a href="#test-your-understanding">Test your understanding</a></li></ul></li><li><a href="#use-case-2-enhance-agent-intelligence-with-knowledge-sources">Use Case #2: Enhance Agent Intelligence with Knowledge Sources</a><ul><li><a href="#objective-1">Objective</a></li><li><a href="#step-by-step-instructions-1">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-2">Congratulations! You’ve completed Use Case 2!</a></li><li><a href="#test-your-understanding-1">Test your understanding</a></li></ul></li><li><a href="#use-case-3-extend-your-agent-with-tools">Use Case #3: Extend Your Agent with Tools</a><ul><li><a href="#objective-2">Objective</a></li><li><a href="#step-by-step-instructions-2">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-3">Congratulations! You’ve completed Use Case 3!</a></li><li><a href="#test-your-understanding-2">Test your understanding</a></li></ul></li><li><a href="#use-case-4-build-custom-topics-for-structured-conversations">Use Case #4: Build Custom Topics for Structured Conversations</a><ul><li><a href="#objective-3">Objective</a></li><li><a href="#step-by-step-instructions-3">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-4">Congratulations! You’ve completed Use Case 4!</a></li><li><a href="#test-your-understanding-3">Test your understanding</a></li></ul></li><li><a href="#summary-of-learnings">Summary of learnings</a><ul><li><a href="#conclusions-and-recommendations">Conclusions and recommendations</a></li></ul></li></ul>
             </nav>
           </aside>
         
@@ -1478,20 +1487,6 @@
       </div><h1>Build Intelligent Agents with Knowledge Sources, Tools, and Topics</h1>
   
   <p class="lab-header-desc">Learn how to create an AI agent from scratch in Microsoft Copilot Studio, enhance it with knowledge sources, extend its capabilities with tools, and build custom topics for structured conversations.</p>
-  
-  
-  <p class="lab-header-updated">
-    Content last updated:
-    <time datetime="2026-05-12T17:15:09+00:00">5/13/2026</time>
-  </p>
-  
-  <div class="lab-header-meta">
-    <span class="lab-meta-pill lab-meta-pill-level-200">Level 200</span>
-    <span class="lab-meta-pill lab-meta-pill-duration">45 min</span>
-    <span class="lab-meta-pill lab-meta-pill-section">Core Learning Path</span>
-    
-    <a href="https://github.com/microsoft/mcs-labs/issues/new?template=bug_report.yml&amp;type=Bug&amp;labels=lab&amp;title=%5Bcore-concepts-agent-knowledge-tools%5D+&amp;lab=core-concepts-agent-knowledge-tools" target="_blank" rel="noopener noreferrer" class="lab-meta-pill lab-meta-pill-feedback">Report an issue</a>
-  </div>
 </div>
 
 <!-- Event navigation rail. Hidden by default; _includes/event-nav/script.html
@@ -1541,29 +1536,6 @@
 <h1 id="build-intelligent-agents-with-knowledge-sources-tools-and-topics">Build Intelligent Agents with Knowledge Sources, Tools, and Topics<a class="header-link" href="#build-intelligent-agents-with-knowledge-sources-tools-and-topics" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h1>
 
 <p>Learn how to create an AI agent from scratch in Microsoft Copilot Studio, enhance it with knowledge sources, extend its capabilities with tools, and build custom topics for structured conversations.</p>
-
-<hr>
-
-<h2 id="lab-details">Lab Details<a class="header-link" href="#lab-details" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Level</th>
-      <th>Persona</th>
-      <th>Duration</th>
-      <th>Purpose</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>200</td>
-      <td>Maker</td>
-      <td>45 minutes</td>
-      <td>After completing this lab, participants will be able to create and configure a new Copilot Studio agent with custom instructions and AI model selection, enhance agent intelligence by adding document and website knowledge sources, extend agent capabilities by creating a connector-based tool, and build custom topics with triggers and nodes to handle structured conversation flows.</td>
-    </tr>
-  </tbody>
-</table>
 
 <hr>
 
@@ -1636,10 +1608,6 @@
       <td>Define your agent’s personality, expertise, and behavior - these instructions guide every interaction and ensure consistent, on-brand responses that align with your business goals</td>
     </tr>
     <tr>
-      <td><strong>AI Model Selection</strong></td>
-      <td>Different AI models offer varying levels of capability and cost - understanding which model to use (like Claude Sonnet 4.6) ensures optimal performance for your specific use case</td>
-    </tr>
-    <tr>
       <td><strong>Knowledge Sources</strong></td>
       <td>Ground your agent in factual, domain-specific content by connecting documents, websites, and files - this transforms generic AI into a specialized expert that provides accurate, verifiable answers</td>
     </tr>
@@ -1693,7 +1661,6 @@ If you are completing this lab as part of a CAT-led workshop or bootcamp, you do
 
 <ul>
   <li>Create a new Copilot Studio agent with custom instructions and configuration</li>
-  <li>Configure agent settings including AI model selection (Claude Sonnet 4.6)</li>
   <li>Upload and integrate knowledge sources (documents and websites) to ground agent responses</li>
   <li>Create a connector-based tool that retrieves real-time weather data</li>
   <li>Create custom topics with triggers to handle specific conversation patterns</li>
@@ -1717,7 +1684,7 @@ If you are completing this lab as part of a CAT-led workshop or bootcamp, you do
     <tr>
       <td>1</td>
       <td><a href="#use-case-1-create-and-configure-your-first-agent">Create and Configure Your First Agent</a></td>
-      <td>Build a functional AI agent with clear instructions and optimal AI model settings</td>
+      <td>Build a functional AI agent with clear instructions</td>
       <td>8 min</td>
     </tr>
     <tr>
@@ -1749,7 +1716,7 @@ If you are completing this lab as part of a CAT-led workshop or bootcamp, you do
 
 <h2 id="use-case-1-create-and-configure-your-first-agent">Use Case #1: Create and Configure Your First Agent<a class="header-link" href="#use-case-1-create-and-configure-your-first-agent" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
 
-<p>Build your first Copilot Studio agent with custom instructions and AI model configuration.</p>
+<p>Build your first Copilot Studio agent with custom instructions.</p>
 
 <table>
   <thead>
@@ -1762,7 +1729,7 @@ If you are completing this lab as part of a CAT-led workshop or bootcamp, you do
   <tbody>
     <tr>
       <td>Create and Configure Your First Agent</td>
-      <td>Build a functional AI agent with clear instructions and optimal AI model settings</td>
+      <td>Build a functional AI agent with clear instructions</td>
       <td>8 minutes</td>
     </tr>
   </tbody>
@@ -1770,7 +1737,7 @@ If you are completing this lab as part of a CAT-led workshop or bootcamp, you do
 
 <p><strong>Summary of tasks</strong></p>
 
-<p>In this section, you’ll learn how to create a new agent, configure its instructions and behavior, and select the appropriate AI model.</p>
+<p>In this section, you’ll learn how to create a new agent, and configure its instructions and behavior.</p>
 
 <p><strong>Scenario:</strong> This morning your agent could only read what anyone can read. Now it gets the plant’s own documents — three years of maintenance history, the equipment manuals, and the handover notes of a technician who left last year. You are building the half that only Vestbjerg has.</p>
 
@@ -1800,19 +1767,23 @@ On a first sign-in (especially for workshop / fresh-tenant accounts) you may see
     <p>Select the <strong>down-arrow (chevron)</strong> next to the <strong>New agent</strong> button, then under <strong>Other ways to build</strong> choose <strong>Agent (Standard)</strong>.</p>
 
     <p><img src="new-agent-classic-menu.png" alt="New agent menu showing Agent (Standard) under Other ways to build"></p>
+
+    <blockquote class="notice notice--info">
+      <p><strong>Note:</strong>
+The options in this menu can vary between users and tenants (for example, not everyone sees the new agent experience). Whatever options you see, choose the <strong>Standard</strong> experience — it’s at the bottom of the dropdown.</p>
+    </blockquote>
   </li>
   <li>
     <p>In the <strong>Name your agent</strong> dialog, enter the following name and select <strong>Create</strong>:</p>
 
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>Vestbjerg Maintenance Assistant</code></pre></div>    </div>
+
+    <p><img src="name-your-agent.png" alt="Name your agent dialog with Vestbjerg Maintenance Assistant entered"></p>
   </li>
   <li>
     <p>Wait for the <strong>“Your agent has been provisioned.”</strong> notification. Your agent opens on its <strong>Overview</strong> page with the <strong>Overview / Knowledge / Tools / Agents / Topics / Channels</strong> tabs.</p>
 
     <p><img src="classic-agent-created-overview.png" alt="Provisioned Vestbjerg Maintenance Assistant agent on its Overview page"></p>
-  </li>
-  <li>
-    <p>Confirm the agent’s model is set to <strong>Claude Sonnet 4.6</strong>. This is the default for new classic agents; if it isn’t selected, choose it from the <strong>Select your agent’s model</strong> dropdown.</p>
   </li>
   <li>
     <p>In the <strong>Instructions</strong> section, select <strong>Edit</strong>, paste the following, and save:</p>
@@ -1837,10 +1808,12 @@ Think of instructions as the agent’s job description: clear, specific instruct
     </blockquote>
   </li>
   <li>
-    <p>Scroll down to the <strong>Knowledge</strong> section and select <strong>Add Knowledge</strong>.</p>
+    <p>Find the <strong>Knowledge</strong> section on the Overview page (depending on your screen size, you may need to scroll down) and select <strong>Add Knowledge</strong>.</p>
   </li>
   <li>
     <p>Select <strong>Public websites</strong> from the list of knowledge source options.</p>
+
+    <p><img src="add-knowledge-public-websites.png" alt="Add knowledge dialog with the Public websites tile highlighted"></p>
   </li>
   <li>
     <p>Input the following URL and select <strong>Add</strong>.</p>
@@ -1860,6 +1833,11 @@ When adding public website knowledge sources in Copilot Studio, you can only fil
 <h4 id="test-your-agent">Test Your Agent<a class="header-link" href="#test-your-agent" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h4>
 
 <ol>
+  <li>
+    <p>Start a new test session: select the <strong>+</strong> (<strong>New test session</strong>) icon in the upper right corner of the test panel. The test panel keeps the conversation going while you build, so starting a new session makes sure the agent uses your latest changes. Do this <strong>every time you have changed the agent</strong> before you test it.</p>
+
+    <p><img src="test-panel-new-session.png" alt="Test your agent panel with the New test session icon highlighted"></p>
+  </li>
   <li>
     <p>In the test panel on the right side of the screen, enter the following question and select <strong>Send</strong>:</p>
 
@@ -1885,7 +1863,6 @@ When adding public website knowledge sources in Copilot Studio, you can only fil
 
 <ul>
   <li><strong>Agent Instructions Define Behavior</strong> – Clear, specific instructions act as your agent’s job description and guide every interaction</li>
-  <li><strong>AI Model Selection Impacts Quality</strong> – Claude Sonnet 4.6 offers superior reasoning and accuracy for production scenarios</li>
   <li><strong>Knowledge Sources Ground Responses</strong> – Connecting external content (like OSHA’s guidance on hazardous energy) helps agents provide factual, verifiable answers</li>
 </ul>
 
@@ -1894,14 +1871,12 @@ When adding public website knowledge sources in Copilot Studio, you can only fil
 <ul>
   <li>If your agent gives generic responses, review and refine your instructions to be more specific about its role and expertise</li>
   <li>Knowledge source indexing can take 2-5 minutes - wait before testing knowledge-specific questions</li>
-  <li>Selecting a more capable model (such as Claude Sonnet 4.6) generally improves reasoning quality, but you should still test with your own scenarios to confirm it’s the right fit</li>
 </ul>
 
 <p><strong>Challenge: Apply this to your own use case</strong></p>
 
 <ul>
   <li>What instructions would you write for an agent in your department?</li>
-  <li>What AI model would you choose for a high-stakes customer-facing scenario?</li>
   <li>What knowledge sources exist in your organization that could enhance an agent?</li>
 </ul>
 
@@ -1956,6 +1931,8 @@ When adding public website knowledge sources in Copilot Studio, you can only fil
   <li>
     <p>Select <strong>+ Add knowledge</strong> and select the <strong>Upload file</strong> option (the large drop-zone tile at the top of the Featured list). Click <strong>select to browse</strong> and use the file dialog to locate and select the downloaded P-207 manual from your local computer.</p>
 
+    <p><img src="add-knowledge-upload-file.png" alt="Add knowledge dialog with the Upload file area highlighted"></p>
+
     <blockquote class="notice notice--success">
       <p><strong>Tip:</strong>
 You can upload multiple file types including PDF, Word documents (.docx), PowerPoint (.pptx), and text files. Each file can be up to 512 MB.</p>
@@ -1965,10 +1942,7 @@ You can upload multiple file types including PDF, Word documents (.docx), PowerP
     <p>Select <strong>Add to agent</strong>.</p>
   </li>
   <li>
-    <p>The processing of the file will take a few minutes. While it processes select <strong>Add knowledge</strong> again and take a minute to review the other types of knowledge sources you can use.</p>
-  </li>
-  <li>
-    <p>Select <strong>Advanced</strong> and review that list of sources as well. When you are done reviewing select <strong>Cancel</strong> to return to the list of your agents configured knowledge sources.</p>
+    <p>The processing of the file will take a few minutes. While it processes select <strong>Add knowledge</strong> again and take a minute to review the other types of knowledge sources you can use. When you are done reviewing, select <strong>Cancel</strong> to return to the list of your agent’s knowledge sources.</p>
   </li>
   <li>
     <p>Wait for the file to finish processing if not already done. You’ll see a status indicator showing the indexing progress. When it is done it will say <strong>Ready</strong> in the Status column.</p>
@@ -1984,10 +1958,22 @@ Knowledge indexing typically takes 2-5 minutes depending on the document size. L
 
 <ol>
   <li>
-    <p>Once the document is indexed, select on the knowledge source to view its details.</p>
+    <p>Once the document is indexed, select the <strong>P-207-Mechanical-Seal-Replacement-Manual.pdf</strong> knowledge source in the list to open its details.</p>
   </li>
   <li>
-    <p>Review the <strong>Name</strong> and <strong>Description</strong> fields. Update if needed to make the source easily identifiable.</p>
+    <p>Look at the <strong>Description</strong> field. Copilot Studio has filled in a generic text that only repeats the file name. Replace it with a description of what the document actually contains:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>Equipment manual for centrifugal pump P-207 (section 7): seal data, spare part numbers, tools, removal of the old seal, pre-fit checks, installation and commissioning of the mechanical seal. Use this source for questions about replacing or checking the P-207 mechanical seal.</code></pre></div>    </div>
+
+    <p><img src="knowledge-source-description.png" alt="Knowledge source details with the Description field highlighted"></p>
+
+    <blockquote class="notice notice--info">
+      <p><strong>Note:</strong>
+The agent uses the description to decide which knowledge source to search for a given question. A generic description like “This knowledge source searches information contained in …” gives it nothing to go on. A clear description of the content makes it much more likely that the agent picks the right source — especially once the agent has several knowledge sources.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Select <strong>Save</strong> in the upper right corner.</p>
   </li>
 </ol>
 
@@ -1997,29 +1983,12 @@ Knowledge indexing typically takes 2-5 minutes depending on the document size. L
 
 <ol>
   <li>
-    <p>Go to the Overview tab, scroll down to the Knowledge section</p>
+    <p>Go to the <strong>Overview</strong> tab and find the <strong>Knowledge</strong> section (scroll down if needed).</p>
   </li>
   <li>
     <p>Select <strong>Disabled</strong> on the Web Search option.</p>
-  </li>
-</ol>
 
-<h4 id="disable-ungrounded-responses">Disable Ungrounded Responses<a class="header-link" href="#disable-ungrounded-responses" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h4>
-
-<ol>
-  <li>
-    <p>Select the <strong>Settings</strong> button at the top right of the agent (next to <strong>Publish</strong>). The Settings panel opens with <strong>Generative AI</strong> selected by default; if it isn’t selected, choose <strong>Generative AI</strong> from the left navigation.</p>
-  </li>
-  <li>
-    <p>Scroll to the <strong>Knowledge</strong> section of the Generative AI settings page and turn off the <strong>Allow ungrounded responses</strong> toggle.</p>
-  </li>
-  <li>
-    <p>Select <strong>Save</strong> to apply the change.</p>
-
-    <blockquote class="notice notice--info">
-      <p><strong>Note:</strong>
-Disabling Web Search and Allow Ungrounded responses together ensures that your agent only uses the data you have explicitly provided to respond to users. This significantly reduces the chance of hallucinations — responses that sound plausible but aren’t based on your actual knowledge sources.</p>
-    </blockquote>
+    <p><img src="knowledge-web-search-disabled.png" alt="Knowledge section with the Web Search toggle highlighted and set to Disabled"></p>
   </li>
 </ol>
 
@@ -2027,7 +1996,7 @@ Disabling Web Search and Allow Ungrounded responses together ensures that your a
 
 <ol>
   <li>
-    <p>Go back to the <strong>Overview</strong> tab and scroll down to the <strong>Knowledge</strong> section.</p>
+    <p>Go back to the <strong>Overview</strong> tab and find the <strong>Knowledge</strong> section (scroll down if needed).</p>
   </li>
   <li>
     <p>Select the uploaded P-207 manual to open its details.</p>
@@ -2044,12 +2013,16 @@ Marking a knowledge source as <strong>Official</strong> in Copilot Studio tells 
 
 <h4 id="add-additional-knowledge-sources">Add Additional Knowledge Sources<a class="header-link" href="#add-additional-knowledge-sources" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h4>
 
+<p>The P-207 manual tells the agent <em>how</em> to replace the seal, but not what has actually happened to this pump. Remember the question from Lab 1 — <em>has the seal on P-207 failed before?</em> Nothing public can answer it. That history lives in the plant’s own SharePoint site: the maintenance log and the handover notes from technicians who have worked on the pump. In this section you connect that site to the agent, so it can answer from your organization’s own experience and not just from the manual.</p>
+
 <ol>
   <li>
     <p>Return to the <strong>Knowledge</strong> panel on the <strong>Overview</strong> tab on the agent and click <strong>+ Add Knowledge</strong> again.</p>
   </li>
   <li>
-    <p>This time, select <strong>SharePoint</strong> as the knowledge source type.</p>
+    <p>This time, select the large <strong>SharePoint</strong> tile in the list of knowledge sources at the bottom of the dialog (not the small SharePoint button in the upload area).</p>
+
+    <p><img src="add-knowledge-sharepoint.png" alt="Add knowledge dialog with the SharePoint tile highlighted"></p>
   </li>
   <li>
     <p>Input the following URL and select <strong>Add</strong>.</p>
@@ -2063,9 +2036,20 @@ Marking a knowledge source as <strong>Official</strong> in Copilot Studio tells 
     <p>Wait for the website content to be indexed.</p>
   </li>
   <li>
+    <p>Start a new test session: select the <strong>+</strong> (<strong>New test session</strong>) icon in the upper right corner of the test panel.</p>
+  </li>
+  <li>
     <p>Test the agent with the following question:</p>
 
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>Has the mechanical seal on P-207 failed before?</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Review the response. This time the agent should be able to answer from the plant’s maintenance history on SharePoint, and the citations should point to documents on the SharePoint site rather than the P-207 manual or the OSHA website.</p>
+
+    <blockquote class="notice notice--info">
+      <p><strong>Note:</strong>
+SharePoint knowledge respects the user’s permissions: the agent only answers from documents the person asking is allowed to open. That is what makes it safe to connect internal sites — but it also means a user without access to the site won’t get these answers.</p>
+    </blockquote>
   </li>
 </ol>
 
@@ -2078,7 +2062,7 @@ Before completing this section, make sure the P-207 manual you uploaded earlier 
 
 <ol>
   <li>
-    <p>In the test panel on the right, click start a new conversation to ensure the agent uses the latest knowledge.</p>
+    <p>Start a new test session: select the <strong>+</strong> (<strong>New test session</strong>) icon in the upper right corner of the test panel. This makes sure the agent uses the latest knowledge.</p>
   </li>
   <li>
     <p>Enter the following question to test the uploaded P-207 manual and select <strong>Send</strong>:</p>
@@ -2166,10 +2150,9 @@ Agents typically show citations at the bottom of responses, indicating which kno
     <p>Open your Vestbjerg Maintenance Assistant agent (the one you created in Use Case #1).</p>
   </li>
   <li>
-    <p>Select <strong>Tools</strong> in the agent’s top navigation bar.</p>
-  </li>
-  <li>
-    <p>Select <strong>Add a tool</strong> and review the Tools page to understand the available options for creating new tools.</p>
+    <p>On the agent’s <strong>Overview</strong> page, find the <strong>Tools</strong> section (scroll down if needed) and select <strong>+ Add tool</strong> in its upper right corner.</p>
+
+    <p><img src="overview-tools-add-tool.png" alt="Tools section on the Overview page with the Add tool button highlighted"></p>
   </li>
   <li>
     <p>The Add tool dialog opens with a list of suggested connector actions. Either type <strong>MSN Weather</strong> in the search box at the top of the dialog (and press Enter), or click the <strong>Connector</strong> filter chip above the results table to narrow the list to connectors.</p>
@@ -2183,7 +2166,7 @@ The <strong>Create new</strong> tile list at the top of the dialog (Agent flow, 
     <p>In the <strong>MSN Weather</strong> connector section, select the <strong>Get current weather</strong> action.</p>
   </li>
   <li>
-    <p>The connector configuration page opens with a <strong>Connection</strong> field labeled <strong>Not connected</strong>. Click that button to open the connection picker, then select <strong>Create new connection</strong> from the popover.</p>
+    <p>The connector configuration page opens with a <strong>Connection</strong> field. If it says <strong>Not connected</strong>, click it to open the connection picker, then select <strong>Create new connection</strong> from the popover. (The wording may look slightly different in your tenant — the goal is to create a new connection to MSN Weather.)</p>
   </li>
   <li>
     <p>When prompted, select <strong>Create</strong> to create the connection.</p>
@@ -2200,7 +2183,7 @@ The <strong>Create new</strong> tile list at the top of the dialog (Agent flow, 
 
 <ol>
   <li>
-    <p>In the test panel on the right, start a new conversation by selecting the + icon in the upper right corner of the test panel.</p>
+    <p>Start a new test session: select the <strong>+</strong> (<strong>New test session</strong>) icon in the upper right corner of the test panel.</p>
   </li>
   <li>
     <p>Ask the following question:</p>
@@ -2379,7 +2362,7 @@ For production scenarios, you would connect to a real backend system here. For t
 
 <ol>
   <li>
-    <p>In the test panel, start a new conversation.</p>
+    <p>Start a new test session: select the <strong>+</strong> (<strong>New test session</strong>) icon in the upper right corner of the test panel.</p>
   </li>
   <li>
     <p>Enter the following trigger phrase:</p>
@@ -2396,7 +2379,14 @@ For production scenarios, you would connect to a real backend system here. For t
       <li>Provide your last name</li>
     </ul>
   </li>
-  <li>Observe how the agent guides you through the structured flow and confirms the submission.</li>
+  <li>
+    <p>Observe how the agent guides you through the structured flow and confirms the submission.</p>
+
+    <blockquote class="notice notice--success">
+      <p><strong>Tip:</strong>
+If the agent keeps asking for your email address, check that you entered a complete address including the domain (for example <code class="language-plaintext highlighter-rouge">.com</code> or <code class="language-plaintext highlighter-rouge">.dk</code>). The question node validates the input as an email, so an incomplete address is rejected and the question is asked again. Feel free to experiment with how the agent handles invalid input — it’s a good way to see how validation and re-prompting work.</p>
+    </blockquote>
+  </li>
 </ol>
 
 <h3 id="congratulations-youve-completed-use-case-4">Congratulations! You’ve completed Use Case 4!<a class="header-link" href="#congratulations-youve-completed-use-case-4" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h3>
@@ -2443,7 +2433,6 @@ For production scenarios, you would connect to a real backend system here. For t
 
 <ul>
   <li>Always define clear, specific instructions that describe the agent’s role and expertise</li>
-  <li>Select Claude Sonnet 4.6 for scenarios where accuracy and quality matter most</li>
   <li>Upload multiple knowledge sources to cover different aspects of your domain</li>
   <li>Provide clear descriptions for tool inputs - these guide the agent on when and how to collect information</li>
   <li>Use agent-level instructions to provide context about tool usage and prevent misuse</li>
