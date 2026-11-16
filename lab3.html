@@ -3,8 +3,8 @@
 <html lang="en-US" class="js" data-event-context="agent-in-a-day" style="--wc-panel-top: 76px; --font-scale: 1;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
 
-<!-- begin _includes/seo.html --><title>Master Variables, Multi-Agent Architectures, and Channel Deployment - Microsoft Copilot Agents Labs</title>
-<meta name="description" content="Learn how to manage conversation state with variables, build specialized child agents for modular solutions, and deploy your agent across multiple channels to reach users where they work.">
+<!-- begin _includes/seo.html --><title>Multi-Agent Architectures and Channel Deployment - Microsoft Copilot Agents Labs</title>
+<meta name="description" content="Learn how to build specialized child agents for modular solutions and deploy your agent across multiple channels to reach users where they work.">
 
 
   <meta name="author" content="MCS Labs">
@@ -16,11 +16,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Microsoft Copilot Agents Labs">
-<meta property="og:title" content="Master Variables, Multi-Agent Architectures, and Channel Deployment">
+<meta property="og:title" content="Multi-Agent Architectures and Channel Deployment">
 <meta property="og:url" content="https://microsoft.github.io/mcs-labs/labs/core-concepts-variables-agents-channels/">
 
 
-  <meta property="og:description" content="Learn how to manage conversation state with variables, build specialized child agents for modular solutions, and deploy your agent across multiple channels to reach users where they work.">
+  <meta property="og:description" content="Learn how to build specialized child agents for modular solutions and deploy your agent across multiple channels to reach users where they work.">
 
 
 
@@ -66,9 +66,18 @@
   /* The Lab Assistant chat widget was saved from the source site without its
      styles or script, so it rendered as a page-wide icon. Hide it. */
   .wc-tag, .wc-panel, .wc-nudge { display: none !important; }
+  /* Keep participants on the current lab: hide breadcrumbs, the "Part of"
+     module link, the workshop rail (Prev/Next/agenda) and the bottom
+     Previous/Next cards. */
+  .breadcrumbs, .lab-module-link, .event-rail, .event-navpair, .lab-meta-pill-feedback { display: none !important; }
+  /* The saved page already has a permalink icon on each heading and the
+     site script adds a second one on load; hide the duplicate. */
+  .header-link + .header-link { display: none !important; }
+  /* Keep screenshots from being blown up to the full text width. */
+  .page__content img { max-width: min(100%, 720px); height: auto; }
 </style>
-<link rel="stylesheet" href="all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"></noscript>
 
 
 
@@ -112,9 +121,9 @@
 
 
     <div class="initial-content">
-<div style="max-width:1100px;margin:0 auto;padding:18px 20px 14px 20px;border-bottom:3px solid #FF831D;display:flex;align-items:center;gap:18px;">
-  <img src="columbus-logo.svg" alt="Columbus" style="height:30px;width:auto;flex:0 0 auto;">
-  <span style="font-family:Arial,Helvetica,sans-serif;font-size:0.9em;color:#02018C;letter-spacing:.04em;text-transform:uppercase;">Agent in a Day</span>
+<div style="max-width:1600px;margin:0 auto;padding:20px 16px 16px 16px;border-bottom:3px solid #FF831D;display:flex;align-items:center;gap:18px;">
+  <img src="columbus-logo.svg" alt="Columbus" style="height:42px;width:auto;flex:0 0 auto;">
+  <span style="font-family:Arial,Helvetica,sans-serif;font-size:1.05em;color:#02018C;letter-spacing:.04em;text-transform:uppercase;">Agent in a Day</span>
 </div>
 
       
@@ -130,7 +139,7 @@
 
 
 <nav class="breadcrumbs" aria-label="Breadcrumbs">
-  <ol itemscope="" itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a href="https://microsoft.github.io/mcs-labs/" itemprop="item"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"></li><li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a href="https://microsoft.github.io/mcs-labs/workshops/" itemprop="item"><span itemprop="name">Workshops</span></a><meta itemprop="position" content="2"></li><li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a href="https://microsoft.github.io/mcs-labs/workshops/agent-in-a-day/" itemprop="item"><span itemprop="name">Agent in a Day</span></a><meta itemprop="position" content="3"></li><li class="current">Master Variables, Multi-Agent Architectures, and Channel Deployment</li></ol>
+  <ol itemscope="" itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a href="https://microsoft.github.io/mcs-labs/" itemprop="item"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"></li><li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a href="https://microsoft.github.io/mcs-labs/workshops/" itemprop="item"><span itemprop="name">Workshops</span></a><meta itemprop="position" content="2"></li><li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a href="https://microsoft.github.io/mcs-labs/workshops/agent-in-a-day/" itemprop="item"><span itemprop="name">Agent in a Day</span></a><meta itemprop="position" content="3"></li><li class="current">Multi-Agent Architectures and Channel Deployment</li></ol>
 </nav>
 
   
@@ -141,7 +150,7 @@
 
 
   <article class="page" itemscope="" itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Master Variables, Multi-Agent Architectures, and Channel Deployment">
+    <meta itemprop="headline" content="Multi-Agent Architectures and Channel Deployment">
     <meta itemprop="description" content="">
     <meta itemprop="datePublished" content="2026-11-03T21:52:11+00:00">
     
@@ -150,7 +159,7 @@
       
         <header>
           <h1 id="page-title" class="page__title" itemprop="headline">
-            <a href="#" itemprop="url">Master Variables, Multi-Agent Architectures, and Channel Deployment
+            <a href="#" itemprop="url">Multi-Agent Architectures and Channel Deployment
 </a>
           </h1>
           
@@ -165,7 +174,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-bookmark"></i> On this page</h4></header>
-              <ul class="toc__menu"><li class=""><a href="#lab-details">Lab Details</a></li><li class=""><a href="#why-this-matters">Why This Matters</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#core-concepts-overview">Core Concepts Overview</a></li><li><a href="#documentation-and-additional-training-links">Documentation and Additional Training Links</a></li><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#summary-of-targets">Summary of Targets</a></li><li><a href="#use-cases-covered">Use Cases Covered</a></li><li><a href="#instructions-by-use-case">Instructions by Use Case</a></li><li><a href="#step-by-step-instructions">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-1">Congratulations! You’ve completed Use Case 1!</a></li><li><a href="#test-your-understanding">Test your understanding</a></li></ul></li><li><a href="#use-case-2-create-and-orchestrate-child-agents">Use Case #2: Create and Orchestrate Child Agents</a><ul><li><a href="#objective-1">Objective</a></li><li><a href="#step-by-step-instructions-1">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-2">Congratulations! You’ve completed Use Case 2!</a></li><li><a href="#test-your-understanding-1">Test your understanding</a></li></ul></li><li><a href="#use-case-3-deploy-your-agent-across-channels">Use Case #3: Deploy Your Agent Across Channels</a><ul><li><a href="#objective-2">Objective</a></li><li><a href="#step-by-step-instructions-2">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-3">Congratulations! You’ve completed Use Case 3!</a></li><li><a href="#test-your-understanding-2">Test your understanding</a></li></ul></li><li><a href="#summary-of-learnings">Summary of learnings</a><ul><li><a href="#conclusions-and-recommendations">Conclusions and recommendations</a></li></ul></li></ul>
+              <ul class="toc__menu"><li class=""><a href="#why-this-matters">Why This Matters</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#core-concepts-overview">Core Concepts Overview</a></li><li><a href="#documentation-and-additional-training-links">Documentation and Additional Training Links</a></li><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#summary-of-targets">Summary of Targets</a></li><li><a href="#use-cases-covered">Use Cases Covered</a></li><li><a href="#instructions-by-use-case">Instructions by Use Case</a></li><li><a href="#step-by-step-instructions">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-1">Congratulations! You’ve completed Use Case 1!</a></li><li><a href="#test-your-understanding">Test your understanding</a></li></ul></li><li><a href="#use-case-2-create-and-orchestrate-child-agents">Use Case #1: Create and Orchestrate Child Agents</a><ul><li><a href="#objective-1">Objective</a></li><li><a href="#step-by-step-instructions-1">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-2">Congratulations! You’ve completed Use Case 1!</a></li><li><a href="#test-your-understanding-1">Test your understanding</a></li></ul></li><li><a href="#use-case-3-deploy-your-agent-across-channels">Use Case #2: Deploy Your Agent Across Channels</a><ul><li><a href="#objective-2">Objective</a></li><li><a href="#step-by-step-instructions-2">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-3">Congratulations! You’ve completed Use Case 2!</a></li><li><a href="#test-your-understanding-2">Test your understanding</a></li></ul></li><li><a href="#summary-of-learnings">Summary of learnings</a><ul><li><a href="#conclusions-and-recommendations">Conclusions and recommendations</a></li></ul></li></ul>
             </nav>
           </aside>
         
@@ -1471,7 +1480,7 @@
 {
   "type": "lab",
   "slug": "core-concepts-variables-agents-channels",
-  "title": "Master Variables, Multi-Agent Architectures, and Channel Deployment",
+  "title": "Multi-Agent Architectures and Channel Deployment",
   "url": "/mcs-labs/labs/core-concepts-variables-agents-channels/"
 }
 </script>
@@ -1485,23 +1494,9 @@
         <a href="https://microsoft.github.io/mcs-labs/modules/core-concepts-part2/" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">
           ← Part of: Copilot Studio Core Concepts - Part 2
         </a>
-      </div><h1>Master Variables, Multi-Agent Architectures, and Channel Deployment</h1>
+      </div><h1>Multi-Agent Architectures and Channel Deployment</h1>
   
-  <p class="lab-header-desc">Learn how to manage conversation state with variables, build specialized child agents for modular solutions, and deploy your agent across multiple channels to reach users where they work.</p>
-  
-  
-  <p class="lab-header-updated">
-    Content last updated:
-    <time datetime="2026-05-12T17:15:09+00:00">5/13/2026</time>
-  </p>
-  
-  <div class="lab-header-meta">
-    <span class="lab-meta-pill lab-meta-pill-level-200">Level 200</span>
-    <span class="lab-meta-pill lab-meta-pill-duration">30 min</span>
-    <span class="lab-meta-pill lab-meta-pill-section">Core Learning Path</span>
-    
-    <a href="https://github.com/microsoft/mcs-labs/issues/new?template=bug_report.yml&amp;type=Bug&amp;labels=lab&amp;title=%5Bcore-concepts-variables-agents-channels%5D+&amp;lab=core-concepts-variables-agents-channels" target="_blank" rel="noopener noreferrer" class="lab-meta-pill lab-meta-pill-feedback">Report an issue</a>
-  </div>
+  <p class="lab-header-desc">Learn how to build specialized child agents for modular solutions and deploy your agent across multiple channels to reach users where they work.</p>
 </div>
 
 <!-- Event navigation rail. Hidden by default; _includes/event-nav/script.html
@@ -1548,32 +1543,9 @@
 
 <hr>
 
-<h1 id="master-variables-multi-agent-architectures-and-channel-deployment">Master Variables, Multi-Agent Architectures, and Channel Deployment<a class="header-link" href="#master-variables-multi-agent-architectures-and-channel-deployment" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h1>
+<h1 id="master-variables-multi-agent-architectures-and-channel-deployment">Multi-Agent Architectures and Channel Deployment<a class="header-link" href="#master-variables-multi-agent-architectures-and-channel-deployment" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h1>
 
-<p>Learn how to manage conversation state with variables, build specialized child agents for modular solutions, and deploy your agent across multiple channels to reach users where they work.</p>
-
-<hr>
-
-<h2 id="lab-details" class="">Lab Details<a class="header-link" href="#lab-details" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Level</th>
-      <th>Persona</th>
-      <th>Duration</th>
-      <th>Purpose</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>200</td>
-      <td>Maker</td>
-      <td>30 minutes</td>
-      <td>After completing this lab, participants will be able to create and manage both topic-level and global variables to maintain conversation state, create child agents with specialized knowledge and configure parent agent orchestration, and deploy agents to web and Microsoft Teams channels with appropriate security settings.</td>
-    </tr>
-  </tbody>
-</table>
+<p>Learn how to build specialized child agents for modular solutions and deploy your agent across multiple channels to reach users where they work.</p>
 
 <hr>
 
@@ -1590,8 +1562,8 @@
   <li><a href="#instructions-by-use-case">Instructions by Use Case</a>
     <ul>
       
-      <li><a href="#use-case-2-create-and-orchestrate-child-agents">Use Case #2: Create and Orchestrate Child Agents</a></li>
-      <li><a href="#use-case-3-deploy-your-agent-across-channels">Use Case #3: Deploy Your Agent Across Channels</a></li>
+      <li><a href="#use-case-2-create-and-orchestrate-child-agents">Use Case #1: Create and Orchestrate Child Agents</a></li>
+      <li><a href="#use-case-3-deploy-your-agent-across-channels">Use Case #2: Deploy Your Agent Across Channels</a></li>
     </ul>
   </li>
 </ul>
@@ -1600,36 +1572,34 @@
 
 <h2 id="why-this-matters" class="">Why This Matters<a class="header-link" href="#why-this-matters" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
 
-<p><strong>Agents need memory, specialization, and accessibility to deliver real business value.</strong></p>
+<p><strong>Agents need specialization and accessibility to deliver real business value.</strong></p>
 
-<p>Think of variables, child agents, and channels like organizing a company:</p>
+<p>Think of child agents and channels like organizing a company:</p>
 <ul>
-  <li><strong>Without variables</strong>: Your agent forgets information between conversation steps, forcing users to repeat themselves - like a team with no shared notes</li>
   <li><strong>Without child agents</strong>: One agent tries to be an expert in everything, leading to confused responses - like a single employee covering every department</li>
   <li><strong>Without channels</strong>: Your perfectly built agent sits behind a locked door - users can’t reach it where they work</li>
 </ul>
 
-<p><strong>With all three</strong>: Your agent remembers context, delegates to specialists when needed, and meets users in Teams, on the web, and beyond - like a well-organized company with shared knowledge, clear expertise, and open doors.</p>
+<p><strong>With both</strong>: Your agent delegates to specialists when needed and meets users in Teams, Microsoft 365 Copilot and beyond - like a well-organized company with clear expertise and open doors.</p>
 
 <p><strong>Common challenges solved by this lab:</strong></p>
 <ul>
-  <li>“My agent forgets what users told it earlier in the conversation”</li>
   <li>“My agent is overwhelmed trying to be an expert in too many areas”</li>
   <li>“My agent is ready but I don’t know how to make it available to users”</li>
-  <li>“I need my agent in Teams, on our website, and in our mobile app”</li>
+  <li>“I need my agent where my colleagues already work — in Teams and Microsoft 365 Copilot”</li>
 </ul>
 
-<p><strong>In 30 minutes, you’ll transform your agent into a sophisticated, memory-enabled, multi-agent system deployed where users need it.</strong></p>
+<p><strong>In 30 minutes, you’ll transform your agent into a multi-agent system deployed where users need it.</strong></p>
 
 <hr>
 
 <h2 id="introduction">Introduction<a class="header-link" href="#introduction" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
 
-<p>Variables, child agents, and channels are the keys to building enterprise-grade agent solutions. Variables act as your agent’s memory - storing user information and conversation context. Child agents enable modular architecture where specialized sub-agents handle specific domains. The agents configured channels (such as Teams, web widgets, or custom applications) determine where and how users interact with your agent.</p>
+<p>Child agents and channels are the keys to building enterprise-grade agent solutions. Child agents enable modular architecture where specialized sub-agents handle specific domains. The agents configured channels (such as Teams, web widgets, or custom applications) determine where and how users interact with your agent.</p>
 
-<p><strong>Real-world example:</strong> An IT support agent collects a user’s employee ID and department at the start of the conversation, storing them in variables for personalized responses throughout the interaction. When the user asks about password policies, the parent agent delegates to a specialized “Security Policies” child agent with deep authentication knowledge. The entire experience is available in Microsoft Teams (where employees chat daily), on the company intranet (for quick access), and through a mobile app (for field workers). Variables maintain context, child agents provide expertise, and channels ensure accessibility.</p>
+<p><strong>Real-world example:</strong> An IT support agent handles everyday questions itself. When a user asks about password policies, the parent agent delegates to a specialized “Security Policies” child agent with deep authentication knowledge. The entire experience is available in Microsoft Teams (where employees chat daily), on the company intranet (for quick access), and through a mobile app (for field workers). Child agents provide expertise, and channels ensure accessibility.</p>
 
-<p>This lab teaches you how to architect sophisticated agent solutions that scale with your organization’s complexity by combining conversation memory, specialized intelligence, and strategic deployment.</p>
+<p>This lab teaches you how to architect sophisticated agent solutions that scale with your organization’s complexity by combining specialized intelligence and strategic deployment.</p>
 
 <hr>
 
@@ -1644,18 +1614,6 @@
   </thead>
   <tbody>
     <tr>
-      <td><strong>Topic-Level Variables</strong></td>
-      <td>Store data within a single topic’s scope - perfect for collecting and using information during a specific conversation flow without polluting the global namespace</td>
-    </tr>
-    <tr>
-      <td><strong>Global Variables</strong></td>
-      <td>Maintain data across the entire conversation and all topics - essential for user preferences, session information, and context that persists throughout the interaction</td>
-    </tr>
-    <tr>
-      <td><strong>Set Variable Node</strong></td>
-      <td>Modify variable values during conversation flows - this allows dynamic data transformation, calculations, and state management</td>
-    </tr>
-    <tr>
       <td><strong>Child Agents</strong></td>
       <td>Specialized sub-agents with focused knowledge and instructions - these enable modular architecture, domain expertise, and scalable agent development</td>
     </tr>
@@ -1668,8 +1626,8 @@
       <td>Distribution points where users interact with your agent - each channel (Teams, web, mobile, custom) has unique capabilities, authentication requirements, and user experiences</td>
     </tr>
     <tr>
-      <td><strong>Channel Security</strong></td>
-      <td>Authentication and access controls that determine who can interact with your agent and how - essential for protecting sensitive data and ensuring compliance</td>
+      <td><strong>Availability</strong></td>
+      <td>Settings that decide who can find and use your agent in a channel - essential for rolling out safely, starting small before sharing widely</td>
     </tr>
   </tbody>
 </table>
@@ -1679,7 +1637,6 @@
 <h2 id="documentation-and-additional-training-links">Documentation and Additional Training Links<a class="header-link" href="#documentation-and-additional-training-links" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
 
 <ul>
-  <li><a href="https://learn.microsoft.com/microsoft-copilot-studio/authoring-variables" target="_blank" rel="noopener noreferrer">Use variables to store and reuse information</a></li>
   <li><a href="https://learn.microsoft.com/microsoft-copilot-studio/advanced-use-skills" target="_blank" rel="noopener noreferrer">Create and manage child agents</a></li>
   <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/architecture/multi-agent-patterns" target="_blank" rel="noopener noreferrer">Multi-agent patterns</a></li>
   <li><a href="https://learn.microsoft.com/microsoft-copilot-studio/publication-fundamentals-publish-channels" target="_blank" rel="noopener noreferrer">Configure channels for your agent</a></li>
@@ -1690,14 +1647,9 @@
 
 <h2 id="prerequisites">Prerequisites<a class="header-link" href="#prerequisites" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
 
-<blockquote class="notice notice--info">
-  <p><strong>Note:</strong>
-If you are completing this lab as part of a CAT-led workshop or bootcamp, you do not need to complete these prerequisites: the CAT team has already prepared them in advance. These prerequisites apply only when completing the lab in a tenant that is not managed by CAT.</p>
-</blockquote>
-
 <ul>
-  <li>Completed <a href="https://microsoft.github.io/mcs-labs/labs/core-concepts-agent-knowledge-tools/">Build Intelligent Agents with Knowledge Sources, Tools, and Topics</a> lab - specifically the Vestbjerg Maintenance Assistant and its Raise Maintenance Request tool, which this lab builds on</li>
-  <li>Access to Microsoft Copilot Studio with tool and channel configuration permissions</li>
+  <li>Completed <a href="https://microsoft.github.io/mcs-labs/labs/core-concepts-agent-knowledge-tools/">Build Intelligent Agents with Knowledge Sources, Tools, and Topics</a> lab - specifically the Vestbjerg Maintenance Assistant, which this lab builds on</li>
+  <li>Access to Microsoft Copilot Studio with permission to publish agents and configure channels</li>
   <li>Access to Microsoft Teams (for Teams channel testing)</li>
   <li>The P-207 Operation and Maintenance Manual, for the child agent knowledge source</li>
 </ul>
@@ -1706,11 +1658,9 @@ If you are completing this lab as part of a CAT-led workshop or bootcamp, you do
 
 <h2 id="summary-of-targets">Summary of Targets<a class="header-link" href="#summary-of-targets" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
 
-<p>In this lab, you’ll implement conversation memory with variables, build a multi-agent architecture with child agents, and deploy your agent across channels. By the end of the lab, you will:</p>
+<p>In this lab, you’ll build a multi-agent architecture with child agents and deploy your agent across channels. By the end of the lab, you will:</p>
 
 <ul>
-  <li>Create and configure topic-level and global variables with appropriate data types</li>
-  <li>Use the Set Variable node to transform and concatenate data during conversations</li>
   <li>Create child agents with specialized knowledge and instructions</li>
   <li>Configure parent agent orchestration rules for proper conversation routing</li>
   <li>Deploy your agent to Microsoft Teams</li>
@@ -1734,15 +1684,15 @@ If you are completing this lab as part of a CAT-led workshop or bootcamp, you do
   <tbody>
     
     <tr>
-      <td>2</td>
+      <td>1</td>
       <td><a href="#use-case-2-create-and-orchestrate-child-agents">Create and Orchestrate Child Agents</a></td>
       <td>Build specialized sub-agents with focused expertise to create modular, scalable solutions</td>
       <td>13 min</td>
     </tr>
     <tr>
-      <td>3</td>
+      <td>2</td>
       <td><a href="#use-case-3-deploy-your-agent-across-channels">Deploy Your Agent Across Channels</a></td>
-      <td>Make your agent accessible across web, Teams, and other platforms with appropriate security</td>
+      <td>Make your agent available in Teams and Microsoft 365 Copilot</td>
       <td>12 min</td>
     </tr>
   </tbody>
@@ -1754,7 +1704,7 @@ If you are completing this lab as part of a CAT-led workshop or bootcamp, you do
 
 <hr>
 
-<h2 id="use-case-2-create-and-orchestrate-child-agents">Use Case #2: Create and Orchestrate Child Agents<a class="header-link" href="#use-case-2-create-and-orchestrate-child-agents" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2><div style="border-left:4px solid #FF831D;background:#F8F8F8;padding:12px 16px;margin:16px 0;font-family:Arial,sans-serif;font-size:0.95em;"><strong style="color:#02018C;">Columbus note</strong><br>This is the first join in the chain you saw this morning. A parent agent that routes to a specialist, and knows when <em>not</em> to. The same pattern connects maintenance to inventory, procurement and scheduling — none of it harder than what you are about to do.</div>
+<h2 id="use-case-2-create-and-orchestrate-child-agents">Use Case #1: Create and Orchestrate Child Agents<a class="header-link" href="#use-case-2-create-and-orchestrate-child-agents" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2><div style="border-left:4px solid #FF831D;background:#F8F8F8;padding:12px 16px;margin:16px 0;font-family:Arial,sans-serif;font-size:0.95em;"><strong style="color:#02018C;">Columbus note</strong><br>This is the first join in the chain you saw this morning. A parent agent that routes to a specialist, and knows when <em>not</em> to. The same pattern connects maintenance to inventory, procurement and scheduling — none of it harder than what you are about to do.</div>
 
 <p>Build specialized child agents with focused knowledge and instructions to create modular, scalable agent architectures.</p>
 
@@ -1849,10 +1799,12 @@ Save the child agent only after you’ve entered the <strong>Name</strong>, <str
     <p>Select  <strong>+ Add knowledge</strong> to add a knowledge source.</p>
   </li>
   <li>
-    <p>Select <strong>Upload files</strong> as the knowledge source type.</p>
+    <p>Download the <a href="P-207-Operation-and-Maintenance-Manual.pdf" target="_blank" rel="noopener noreferrer">P-207 Operation and Maintenance Manual</a> so you have the file on your computer.</p>
   </li>
   <li>
-    <p>Download the <a href="P-207-Operation-and-Maintenance-Manual.pdf" target="_blank" rel="noopener noreferrer">P-207 Operation and Maintenance Manual</a> and upload it to the child agent as a knowledge source.</p>
+    <p>In the <strong>Add knowledge</strong> dialog, select the large <strong>Upload file</strong> area at the top. Click <strong>select to browse</strong> and choose the P-207 Operation and Maintenance Manual you just downloaded.</p>
+
+    <p><img src="add-knowledge-upload-file.png" alt="Add knowledge dialog with the Upload file area highlighted"></p>
 
     <blockquote class="notice notice--warning">
       <p><strong>Important:</strong>
@@ -1877,10 +1829,10 @@ Child agents can have their own dedicated knowledge sources. This keeps knowledg
     <p>In the parent agent’s <strong>Instructions</strong> field on the Overview page, select <strong>Edit</strong> in the upper right corner of the <strong>Instructions</strong> section.</p>
   </li>
   <li>
-    <p>Add the following orchestration instructions just before the # General Guidelines paragraph of the instructions. Notice the <code class="language-plaintext highlighter-rouge">(replace this text)</code> placeholder — you’ll replace it with a direct reference to the child agent in the next step.</p>
+    <p>Add the following orchestration instructions just before the <strong>Guidelines:</strong> section of the instructions (the instructions you pasted in Lab 2). Notice the <code class="language-plaintext highlighter-rouge">(replace this text)</code> placeholder — you’ll replace it with a direct reference to the child agent in the next step.</p>
 
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code># Parts and spares
- Use (replace this text) when asked about a spare part, a part number, a specification or what is held in the store. Never use it when a technician is reporting a fault that needs a maintenance request raised.</code></pre></div>    </div>
+ Use (replace this text) when asked about a spare part, a part number, a specification or what is held in the store. Never use it when a technician is reporting a fault or asking how to carry out a repair — the parent agent handles those itself.</code></pre></div>    </div>
   </li>
   <li>
     <p>Select the <strong><code class="language-plaintext highlighter-rouge">(replace this text)</code></strong> placeholder in the paragraph you just added, then type <code class="language-plaintext highlighter-rouge">/</code> to open the dropdown menu. This lists your agent’s available tools, topics, child agents, knowledge sources, and more. Select <strong>Parts and Spares</strong> from the list to create a direct reference to the child agent, replacing the placeholder text.</p>
@@ -1923,7 +1875,7 @@ Disabled child agents won’t be invoked by the parent agent. Always verify chil
 
 <ol>
   <li>
-    <p>In the parent agent’s test panel, start a new conversation.</p>
+    <p>In the parent agent’s test panel, start a new test session: select the <strong>+</strong> (<strong>New test session</strong>) icon in the upper right corner of the test panel. This makes sure the parent agent uses the child agent and the orchestration instructions you just added.</p>
   </li>
   <li>
     <p>Ask a question that should trigger the child agent:</p>
@@ -1938,24 +1890,6 @@ Disabled child agents won’t be invoked by the parent agent. Always verify chil
     </ul>
   </li>
   <li>Look for indicators in the test panel showing which agent responded (some interfaces show “Responded by: Parts and Spares” or similar).</li>
-</ol>
-
-<h4 id="test-orchestration-logic">Test Orchestration Logic<a class="header-link" href="#test-orchestration-logic" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h4>
-
-<ol>
-  <li>
-    <p>Now test the orchestration instructions by asking a question that should NOT use the child agent:</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><button title="Copy to clipboard" class="clipboard-copy-button"><span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i></button><code>I have the cover off P-207 and the mechanical seal is damaged. It is not on the work order.</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Verify that the parent agent uses the Raise Maintenance Request tool (from the previous lab) instead of routing to the child agent.</p>
-
-    <blockquote class="notice notice--success">
-      <p><strong>Tip:</strong>
-This demonstrates proper orchestration - the parent agent understands the difference between “general parts guidance” (child agent) and “analyze a specific prompt” (tool).</p>
-    </blockquote>
-  </li>
 </ol>
 
 <h4 id="explore-child-agent-capabilities">Explore Child Agent Capabilities<a class="header-link" href="#explore-child-agent-capabilities" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h4>
@@ -1982,7 +1916,7 @@ This demonstrates proper orchestration - the parent agent understands the differ
 
 <hr>
 
-<h3 id="congratulations-youve-completed-use-case-2">Congratulations! You’ve completed Use Case 2!<a class="header-link" href="#congratulations-youve-completed-use-case-2" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h3>
+<h3 id="congratulations-youve-completed-use-case-2">Congratulations! You’ve completed Use Case 1!<a class="header-link" href="#congratulations-youve-completed-use-case-2" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h3>
 
 <hr>
 
@@ -2006,9 +1940,9 @@ This demonstrates proper orchestration - the parent agent understands the differ
 
 <hr>
 
-<h2 id="use-case-3-deploy-your-agent-across-channels">Use Case #3: Deploy Your Agent Across Channels<a class="header-link" href="#use-case-3-deploy-your-agent-across-channels" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2><div style="border-left:4px solid #FF831D;background:#F8F8F8;padding:12px 16px;margin:16px 0;font-family:Arial,sans-serif;font-size:0.95em;"><strong style="color:#02018C;">Columbus note</strong><br>Work through the Channels overview and publish your agent. The Teams deployment steps that follow are run as a demonstration from the front rather than hands-on — they involve signing in to Teams in a second browser session and are fragile in a full room. Watch, then try them in your own tenant afterwards.</div>
+<h2 id="use-case-3-deploy-your-agent-across-channels">Use Case #2: Deploy Your Agent Across Channels<a class="header-link" href="#use-case-3-deploy-your-agent-across-channels" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2><div style="border-left:4px solid #FF831D;background:#F8F8F8;padding:12px 16px;margin:16px 0;font-family:Arial,sans-serif;font-size:0.95em;"><strong style="color:#02018C;">Columbus note</strong><br>Work through the Channels overview and publish your agent. The Teams deployment steps that follow are run as a demonstration from the front rather than hands-on — they involve signing in to Teams in a second browser session and are fragile in a full room. Watch, then try them in your own tenant afterwards.</div>
 
-<p>Learn how to configure and deploy your agent to channels, understand channel-specific settings, and implement appropriate security controls.</p>
+<p>Learn how to configure and deploy your agent to channels, understand channel-specific settings, and decide who can use your agent.</p>
 
 <table>
   <thead>
@@ -2035,7 +1969,7 @@ This demonstrates proper orchestration - the parent agent understands the differ
 
 <h3 id="objective-2">Objective<a class="header-link" href="#objective-2" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h3>
 
-<p>Deploy your agent to Teams and Microsoft 365 Copilot channels with proper configuration and security.</p>
+<p>Deploy your agent to Teams and Microsoft 365 Copilot channels with the right availability settings.</p>
 
 <hr>
 
@@ -2046,22 +1980,24 @@ This demonstrates proper orchestration - the parent agent understands the differ
 <ol>
   <li>
     <p>In your Vestbjerg Maintenance Assistant agent, select <strong>Channels</strong> in the top navigation bar.</p>
+
+    <p><img src="channels-tab.png" alt="Channels page with the Channels tab highlighted"></p>
   </li>
   <li>
     <p>Review the Channels overview page to see available channel options:</p>
     <ul>
-      <li><strong>Microsoft 365 and Microsoft Teams</strong>: Native Teams + Microsoft 365 Copilot integration (this is the tile you’ll deploy to later in this use case)</li>
-      <li><strong>Demo website</strong>: Test website for quick agent testing</li>
-      <li><strong>SharePoint</strong>: Deploy as a SharePoint-grounded agent</li>
-      <li><strong>Web app</strong>: Embeddable web widget for your sites</li>
-      <li><strong>Native app</strong>: iOS and Android integration</li>
-      <li><strong>Direct Line Speech</strong> / <strong>Email</strong> / <strong>Dynamics 365 Contact Center</strong> / <strong>Genesys</strong> / <strong>LivePerson</strong>: Specialized service channels</li>
-      <li>Social / messaging: <strong>Facebook</strong>, <strong>WhatsApp</strong>, <strong>Slack</strong>, <strong>Telegram</strong>, <strong>Twilio</strong>, <strong>Line</strong>, <strong>GroupMe</strong></li>
+      <li><strong>Microsoft channels</strong>
+        <ul>
+          <li><strong>Microsoft 365 and Microsoft Teams</strong>: Make the agent available in Teams and Microsoft 365 Copilot (this is the tile you’ll deploy to later in this use case)</li>
+          <li><strong>SharePoint</strong>: Make the agent available on a SharePoint site</li>
+        </ul>
+      </li>
+      <li><strong>Customer engagement hub</strong>: Telephony, Genesys, LivePerson, Salesforce, ServiceNow and custom hubs — used when the agent should hand a conversation over to a live agent</li>
     </ul>
 
     <blockquote class="notice notice--info">
       <p><strong>Note:</strong>
-Available channels depend on your Copilot Studio license and environment settings. Some channels require additional configuration or premium licenses.</p>
+The banner at the top explains that the agent uses <strong>Microsoft authentication</strong>, so only the Microsoft channels are available. Other channels, such as websites, mobile apps or social messaging, appear when you change the authentication settings. The tiles you see can also depend on your license — for this lab you only need <strong>Microsoft 365 and Microsoft Teams</strong>.</p>
     </blockquote>
   </li>
 </ol>
@@ -2095,9 +2031,7 @@ Choose channels based on where your users already work. Don’t force users to a
 
 <ol>
   <li>
-    <p>Before starting the Teams channel setup, sign in to the web version of Teams so your browser has an authenticated Teams session ready. In the <strong>Copilot Studio</strong> tab, select the <strong>app launcher</strong> (the 3×3 grid icon in the upper-left corner), then select <strong>Teams</strong>.</p>
-
-    <p><img src="m365-app-launcher-teams.png" alt="Microsoft 365 app launcher opened from Copilot Studio, with Teams highlighted"></p>
+    <p>Before starting the Teams channel setup, sign in to the web version of Teams so your browser has an authenticated Teams session ready. Open <a href="https://teams.microsoft.com/v2/?skipauthstrap=1" target="_blank" rel="noopener noreferrer"><strong>Microsoft Teams on the web</strong></a> — it opens in a new tab.</p>
   </li>
   <li>
     <p>When Teams opens, make sure you’re using the <strong>web interface</strong>, not the desktop client. If you’re prompted with <strong>Open Microsoft Teams?</strong>, select <strong>Cancel</strong>, then choose <strong>Use the web app instead</strong>.</p>
@@ -2113,9 +2047,20 @@ Choose channels based on where your users already work. Don’t force users to a
 This step pre-authenticates Teams in your browser. Without it, the later <strong>See agent in Teams</strong> step may fail or redirect you into a login flow that interrupts the lab.</p>
     </blockquote>
   </li>
-  <li>Before you can deploy to a channel, you must first publish your agent. Select <strong>Publish</strong> from the top right corner of the screen.  Follow the prompts.</li>
+  <li>
+    <p>Before you can deploy to a channel, you must first publish your agent. Select <strong>Publish</strong> from the top right corner of the screen, and then select <strong>Publish</strong> in the <strong>Publish this agent</strong> dialog.</p>
+
+    <p><img src="channels-publish-button.png" alt="Agent top bar with the Publish button highlighted"></p>
+
+    <blockquote class="notice notice--info">
+      <p><strong>Note:</strong>
+The dialog has a <strong>Force newest version</strong> checkbox. It only matters for conversations that are already running in persistent channels like Teams: when checked, those users get your latest changes right away, but their ongoing conversation may be interrupted. You can check it and select <strong>Publish</strong>.</p>
+    </blockquote>
+  </li>
   <li>
     <p>Return to the Channels page and select <strong>Microsoft 365 and Microsoft Teams</strong>.</p>
+
+    <p><img src="channels-m365-teams-tile.png" alt="Channels page with the Microsoft 365 and Microsoft Teams tile highlighted"></p>
   </li>
   <li>Review the <strong>Agent preview</strong> section that shows how users will see your agent.
     <ul>
@@ -2128,13 +2073,17 @@ This step pre-authenticates Teams in your browser. Without it, the later <strong
     <p>Select <strong>Add channel</strong> in the bottom right corner of the panel to start activation of this channel.</p>
   </li>
   <li>
-    <p>Select <strong>Edit details</strong> and make adjustments. For example, change the short description to something like <strong>Assist users building agents</strong></p>
+    <p>Select <strong>Edit details</strong> and make adjustments. For example, change the short description to something like <strong>Helps technicians find procedures, specifications and spare parts</strong></p>
   </li>
   <li>
     <p>Select <strong>Save</strong> to save your changes.</p>
   </li>
   <li>
     <p>Select <strong>Publish</strong> to publish your agent and make it available.</p>
+
+    <p>If a <strong>Ready to publish?</strong> dialog appears, check <strong>Force newest version</strong> and then select <strong>Publish</strong>.</p>
+
+    <p><img src="ready-to-publish-force-newest.png" alt="Ready to publish dialog with Force newest version checked"></p>
   </li>
   <li>
     <p>From the Channels page, select <strong>Microsoft 365 and Microsoft Teams</strong> again to re-open the channel detail panel.</p>
@@ -2148,13 +2097,15 @@ The earlier <em>“Turn on Teams”</em> / <em>“Enable”</em> control was rep
     </blockquote>
   </li>
   <li>
-    <p>Select <strong>Availability options</strong> and review what is available:</p>
+    <p>Select <strong>Availability options</strong> and review the options for who can find and use the agent — for example only you, specific people, or everyone in the organization.</p>
   </li>
   <li>
     <p>After reviewing the options, select the back arrow to return to the prior panel.</p>
   </li>
   <li>
     <p>Select <strong>See agent in Teams</strong>, this will load a new browser tab with the Teams web application.</p>
+
+    <p><img src="see-agent-in-teams.png" alt="Agent preview with the See agent in Teams link highlighted"></p>
   </li>
   <li>
     <p>If prompted to <strong>Open Microsoft Teams?</strong>, select <strong>Cancel</strong> and after the dialog closes select the <strong>Use the web app instead</strong></p>
@@ -2163,18 +2114,23 @@ The earlier <em>“Turn on Teams”</em> / <em>“Enable”</em> control was rep
     <p>If this is your first visit to Teams, you may be prompted with some other dialogs, after you dismiss them you may have to go back to Copilot Studio and re-select <strong>See agent in Teams</strong></p>
   </li>
   <li>
-    <p>You should now see a dialog presenting your agent for you to review before you add it to your Teams session. After reviewing the details, select <strong>Add</strong></p>
+    <p>You should now see a dialog presenting your agent for you to review before you add it to your Teams session. After reviewing the details, select <strong>Add</strong>.</p>
+
+    <blockquote class="notice notice--success">
+      <p><strong>Tip:</strong>
+If you see <strong>App package can’t be uploaded</strong> with <em>Unknown Exception</em>, close the dialog and select <strong>Add</strong> again — it usually works on the second try. If it keeps failing, go back to Copilot Studio and select <strong>See agent in Teams</strong> once more.</p>
+    </blockquote>
   </li>
   <li>
     <p>You should next see a <strong>Added successfully</strong> message select <strong>Open</strong> to use your agent.</p>
   </li>
   <li>
-    <p>Once your agent loads, ask it a question like <strong>How do I build a good prompt?</strong></p>
+    <p>Once your agent loads, ask it a question like <strong>Which bearings does P-207 use?</strong></p>
   </li>
-  <li>Compare the experience between Teams and the web demo site:
+  <li>Compare the experience in Teams with the test panel in Copilot Studio:
     <ul>
       <li>Notice how the UI differs</li>
-      <li>Test the same questions on the channel</li>
+      <li>Ask the same question in both places and compare the answers</li>
     </ul>
 
     <blockquote class="notice notice--success">
@@ -2186,7 +2142,7 @@ Always test your agent on each deployed channel. Some features or formatting may
 
 <hr>
 
-<h3 id="congratulations-youve-completed-use-case-3">Congratulations! You’ve completed Use Case 3!<a class="header-link" href="#congratulations-youve-completed-use-case-3" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h3>
+<h3 id="congratulations-youve-completed-use-case-3">Congratulations! You’ve completed Use Case 2!<a class="header-link" href="#congratulations-youve-completed-use-case-3" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h3>
 
 <hr>
 
@@ -2196,17 +2152,14 @@ Always test your agent on each deployed channel. Some features or formatting may
 
 <ul>
   <li><strong>Channels Enable Access</strong> – Deploy to channels where your users already work to maximize adoption and minimize friction</li>
-  <li><strong>Security Settings Matter</strong> – Always configure appropriate authentication and domain restrictions to protect data and ensure compliance</li>
+  <li><strong>Availability Matters</strong> – Decide who can find and use your agent before you share it widely</li>
   <li><strong>Channel Capabilities Vary</strong> – Test thoroughly on each channel and design agents that work within the limitations of your target platforms</li>
-  <li><strong>Demo Sites Accelerate Feedback</strong> – Use demo websites for quick testing and stakeholder review before full production deployment</li>
 </ul>
 
 <p><strong>Lessons learned &amp; troubleshooting tips:</strong></p>
 
 <ul>
   <li>If your agent doesn’t appear in Teams after deployment, check with your IT admin about app approval policies</li>
-  <li>Domain restrictions prevent unauthorized embedding - always configure allowed domains for production</li>
-  <li>Test authentication flows on each channel to ensure proper security enforcement</li>
   <li>Some rich UI features may not work on all channels - design for compatibility</li>
 </ul>
 
@@ -2224,30 +2177,26 @@ Always test your agent on each deployed channel. Some features or formatting may
 
 <p>True learning comes from doing, questioning, and reflecting—so let’s put your skills to the test.</p>
 
-<p>To maximize the impact of variables, child agents, and channels in Copilot Studio:</p>
+<p>To maximize the impact of child agents and channels in Copilot Studio:</p>
 
 <ul>
-  <li><strong>Variables Provide Memory</strong> – Use topic-level variables for localized data and global variables for shared context. This creates agents that remember user information and maintain conversation continuity.</li>
-  <li><strong>Scope Variables Appropriately</strong> – Don’t make everything global. Topic variables keep data organized and prevent namespace pollution while global variables enable cross-topic coordination.</li>
   <li><strong>Child Agents Enable Specialization</strong> – Build focused child agents with dedicated knowledge and instructions rather than overloading a single agent with all content.</li>
   <li><strong>Orchestration Instructions Matter</strong> – Clear, explicit orchestration rules in the parent agent ensure proper routing and prevent confusion between child agents.</li>
-  <li><strong>Deploy Where Users Work</strong> – Meet users in their existing environments (Teams, web, mobile) rather than forcing them to adopt new tools. This maximizes adoption and minimizes friction.</li>
-  <li><strong>Security Comes First</strong> – Always configure appropriate authentication and domain restrictions based on data sensitivity. Test security settings thoroughly before production deployment.</li>
+  <li><strong>Deploy Where Users Work</strong> – Meet users in their existing environments (Teams, Microsoft 365 Copilot) rather than forcing them to adopt new tools. This maximizes adoption and minimizes friction.</li>
+  <li><strong>Start Small</strong> – Use the availability settings to share the agent with a small group first, and widen access once it has proven itself.</li>
 </ul>
 
 <hr>
 
 <h3 id="conclusions-and-recommendations">Conclusions and recommendations<a class="header-link" href="#conclusions-and-recommendations" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h3>
 
-<p><strong>Variables, child agents, and channels golden rules:</strong></p>
+<p><strong>Child agents and channels golden rules:</strong></p>
 
 <ul>
-  <li>Use descriptive variable names that clearly indicate their purpose and content</li>
-  <li>Choose the appropriate variable scope - default to topic-level unless you need global access</li>
   <li>Create child agents when knowledge domains are distinct and specialized</li>
   <li>Write explicit orchestration instructions that clarify when to use each child agent</li>
   <li>Deploy to channels where users already spend their time - don’t ask users to go somewhere new</li>
-  <li>Always configure security settings appropriate for your data sensitivity level</li>
+  <li>Decide who should have access before sharing your agent widely</li>
   <li>Test multi-agent interactions and multi-channel deployment thoroughly before production rollout</li>
 </ul>
 
