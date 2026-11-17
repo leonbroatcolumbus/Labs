@@ -174,7 +174,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-bookmark"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#why-this-matters">Why This Matters</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#core-concepts-overview">Core Concepts Overview</a></li><li><a href="#documentation-and-additional-training-links">Documentation and Additional Training Links</a></li><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#summary-of-targets">Summary of Targets</a></li><li><a href="#use-cases-covered">Use Cases Covered</a></li><li><a href="#instructions-by-use-case">Instructions by Use Case</a></li><li><a href="#use-case-1-create-and-configure-your-first-agent">Use Case #1: Create and Configure Your First Agent</a><ul><li><a href="#objective">Objective</a></li><li><a href="#step-by-step-instructions">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-1">Congratulations! You’ve completed Use Case 1!</a></li><li><a href="#test-your-understanding">Test your understanding</a></li></ul></li><li><a href="#use-case-2-enhance-agent-intelligence-with-knowledge-sources">Use Case #2: Enhance Agent Intelligence with Knowledge Sources</a><ul><li><a href="#objective-1">Objective</a></li><li><a href="#step-by-step-instructions-1">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-2">Congratulations! You’ve completed Use Case 2!</a></li><li><a href="#test-your-understanding-1">Test your understanding</a></li></ul></li><li><a href="#use-case-3-extend-your-agent-with-tools">Use Case #3: Extend Your Agent with Tools</a><ul><li><a href="#objective-2">Objective</a></li><li><a href="#step-by-step-instructions-2">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-3">Congratulations! You’ve completed Use Case 3!</a></li><li><a href="#test-your-understanding-2">Test your understanding</a></li></ul></li><li><a href="#use-case-4-build-custom-topics-for-structured-conversations">Use Case #4: Build Custom Topics for Structured Conversations</a><ul><li><a href="#objective-3">Objective</a></li><li><a href="#step-by-step-instructions-3">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-4">Congratulations! You’ve completed Use Case 4!</a></li><li><a href="#test-your-understanding-3">Test your understanding</a></li></ul></li><li><a href="#summary-of-learnings">Summary of learnings</a><ul><li><a href="#conclusions-and-recommendations">Conclusions and recommendations</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#use-cases-covered">Use Cases Covered</a></li><li><a href="#use-case-1-create-and-configure-your-first-agent">Use Case #1: Create and Configure Your First Agent</a></li><li><a href="#use-case-2-enhance-agent-intelligence-with-knowledge-sources">Use Case #2: Enhance Agent Intelligence with Knowledge Sources</a></li><li><a href="#use-case-3-extend-your-agent-with-tools">Use Case #3: Extend Your Agent with Tools</a></li><li><a href="#use-case-4-build-custom-topics-for-structured-conversations">Use Case #4: Build Custom Topics for Structured Conversations</a></li><li><a href="#summary-of-learnings">Summary of learnings</a></li><li><a href="#background">Background</a></li></ul>
             </nav>
           </aside>
         
@@ -1561,114 +1561,6 @@
 
 <hr>
 
-<h2 id="why-this-matters">Why This Matters<a class="header-link" href="#why-this-matters" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
-
-<p><strong>Building AI agents can feel overwhelming</strong> - especially when you’re starting from scratch and need them to actually DO things.</p>
-
-<p>Think of building an AI agent like assembling a team:</p>
-<ul>
-  <li><strong>Without proper setup</strong>: Your team has no job descriptions, no reference materials, no tools, and no processes - they give generic answers, can’t take action, and frustrate everyone</li>
-  <li><strong>With proper setup</strong>: Your team has clear roles, access to the right documents, powerful tools at their fingertips, and well-defined workflows - they deliver intelligent, actionable results every time</li>
-</ul>
-
-<p><strong>Common challenges solved by this lab:</strong></p>
-<ul>
-  <li>“I don’t know where to start with AI agent development”</li>
-  <li>“My agent gives generic answers that don’t help users”</li>
-  <li>“My agent needs real-time data from external systems”</li>
-  <li>“I need my agent to handle specific conversation flows and collect user information”</li>
-</ul>
-
-<p><strong>In just 45 minutes, you’ll have a fully functional AI agent with knowledge, tools, and structured conversation flows</strong> - no coding required.</p>
-
-<hr>
-
-<h2 id="introduction">Introduction<a class="header-link" href="#introduction" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
-
-<p>Microsoft Copilot Studio empowers makers to build sophisticated AI agents without writing code. By combining intuitive visual tools with powerful AI capabilities, you can create agents that understand natural language, leverage your organization’s knowledge, connect to external services, and guide users through structured conversation flows.</p>
-
-<p><strong>Real-world example:</strong> A sales team needs an AI assistant that can answer product questions from official documentation, fetch real-time weather data for event planning, and collect contact information for a mailing list. With Copilot Studio, you build one agent that does all of this: it references product docs for accurate answers, uses connector tools for live data, and guides users through a structured signup flow - all without writing a single line of code.</p>
-
-<p>This lab takes you through the complete journey from agent creation to a fully capable assistant with knowledge sources, tools, and custom topics - giving you the foundation to build production-ready AI solutions.</p>
-
-<hr>
-
-<h2 id="core-concepts-overview">Core Concepts Overview<a class="header-link" href="#core-concepts-overview" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Concept</th>
-      <th>Why it matters</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Agent Instructions</strong></td>
-      <td>Define your agent’s personality, expertise, and behavior - these instructions guide every interaction and ensure consistent, on-brand responses that align with your business goals</td>
-    </tr>
-    <tr>
-      <td><strong>Knowledge Sources</strong></td>
-      <td>Ground your agent in factual, domain-specific content by connecting documents, websites, and files - this transforms generic AI into a specialized expert that provides accurate, verifiable answers</td>
-    </tr>
-    <tr>
-      <td><strong>Tools</strong></td>
-      <td>Extend agent capabilities beyond knowledge sources by connecting to external APIs, connectors, and services - enabling real-time data access and action execution that makes agents truly interactive</td>
-    </tr>
-    <tr>
-      <td><strong>Topics</strong></td>
-      <td>Structured conversation flows with triggers, conditions, and nodes that define how agents respond to specific user intents - providing precise control over agent behavior</td>
-    </tr>
-    <tr>
-      <td><strong>Trigger Phrases</strong></td>
-      <td>Keywords and patterns that activate specific topics - these ensure your agent recognizes when to engage specialized conversation flows</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr>
-
-<h2 id="documentation-and-additional-training-links">Documentation and Additional Training Links<a class="header-link" href="#documentation-and-additional-training-links" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
-
-<ul>
-  <li><a href="https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-what-is-copilot-studio" target="_blank" rel="noopener noreferrer">Microsoft Copilot Studio Overview</a></li>
-  <li><a href="https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-get-started" target="_blank" rel="noopener noreferrer">Create and configure agents</a></li>
-  <li><a href="https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/knowledge-sources" target="_blank" rel="noopener noreferrer">Add knowledge sources to your agent</a></li>
-  <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-create-edit-topics" target="_blank" rel="noopener noreferrer">Create and manage topics</a></li>
-  <li><a href="https://learn.microsoft.com/microsoft-copilot-studio/authoring-triggers" target="_blank" rel="noopener noreferrer">Work with topic triggers</a></li>
-</ul>
-
-<hr>
-
-<h2 id="prerequisites">Prerequisites<a class="header-link" href="#prerequisites" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
-
-<blockquote class="notice notice--info">
-  <p><strong>Note:</strong>
-If you are completing this lab as part of a CAT-led workshop or bootcamp, you do not need to complete these prerequisites: the CAT team has already prepared them in advance. These prerequisites apply only when completing the lab in a tenant that is not managed by CAT.</p>
-</blockquote>
-
-<ul>
-  <li>Access to Microsoft Copilot Studio (trial or licensed environment)</li>
-  <li>A document to upload as a knowledge source (PDF, Word, or text file) - or use the <a href="P-207-Mechanical-Seal-Replacement-Manual.pdf" target="_blank" rel="noopener noreferrer">P-207 Mechanical Seal Replacement Manual</a></li>
-  <li>Basic familiarity with web browsers and form filling</li>
-</ul>
-
-<hr>
-
-<h2 id="summary-of-targets">Summary of Targets<a class="header-link" href="#summary-of-targets" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
-
-<p>In this lab, you’ll build a Copilot Studio agent from the ground up, enhance it with knowledge, extend it with tools, and add structured conversation flows. By the end of the lab, you will:</p>
-
-<ul>
-  <li>Create a new Copilot Studio agent with custom instructions and configuration</li>
-  <li>Upload and integrate knowledge sources (documents and websites) to ground agent responses</li>
-  <li>Create a connector-based tool that retrieves real-time weather data</li>
-  <li>Create custom topics with triggers to handle specific conversation patterns</li>
-  <li>Test your agent across all capabilities to verify end-to-end functionality</li>
-</ul>
-
-<hr>
-
 <h2 id="use-cases-covered">Use Cases Covered<a class="header-link" href="#use-cases-covered" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
 
 <table>
@@ -1710,34 +1602,9 @@ If you are completing this lab as part of a CAT-led workshop or bootcamp, you do
 
 <hr>
 
-<h2 id="instructions-by-use-case">Instructions by Use Case<a class="header-link" href="#instructions-by-use-case" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
-
-<hr>
-
 <h2 id="use-case-1-create-and-configure-your-first-agent">Use Case #1: Create and Configure Your First Agent<a class="header-link" href="#use-case-1-create-and-configure-your-first-agent" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
 
 <p>Build your first Copilot Studio agent with custom instructions.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Use case</th>
-      <th>Value added</th>
-      <th>Estimated effort</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Create and Configure Your First Agent</td>
-      <td>Build a functional AI agent with clear instructions</td>
-      <td>8 minutes</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Summary of tasks</strong></p>
-
-<p>In this section, you’ll learn how to create a new agent, and configure its instructions and behavior.</p>
 
 <p><strong>Scenario:</strong> This morning your agent could only read what anyone can read. Now it gets the plant’s own documents — three years of maintenance history, the equipment manuals, and the handover notes of a technician who left last year. You are building the half that only Vestbjerg has.</p>
 
@@ -1887,27 +1754,6 @@ When adding public website knowledge sources in Copilot Studio, you can only fil
 <h2 id="use-case-2-enhance-agent-intelligence-with-knowledge-sources">Use Case #2: Enhance Agent Intelligence with Knowledge Sources<a class="header-link" href="#use-case-2-enhance-agent-intelligence-with-knowledge-sources" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
 
 <p>Upload custom documents and content to transform your agent from a generic assistant into a domain-specific expert.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Use case</th>
-      <th>Value added</th>
-      <th>Estimated effort</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Enhance Agent Intelligence with Knowledge Sources</td>
-      <td>Transform generic AI into a domain expert by grounding responses in your organization’s content</td>
-      <td>10 minutes</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Summary of tasks</strong></p>
-
-<p>In this section, you’ll learn how to upload documents as knowledge sources and test how your agent uses that knowledge to answer domain-specific questions.</p>
 
 <p><strong>Scenario:</strong> Your Vestbjerg Maintenance Assistant needs to answer questions about replacing the mechanical seal on pump P-207. You’ll upload Vestbjerg’s equipment manual so the agent can provide accurate answers grounded in the plant’s own documentation.</p>
 
@@ -2112,27 +1958,6 @@ Agents typically show citations at the bottom of responses, indicating which kno
 
 <p>Build a connector-based weather tool.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Use case</th>
-      <th>Value added</th>
-      <th>Estimated effort</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Extend Your Agent with Tools</td>
-      <td>Connect your agent to external services</td>
-      <td>15 minutes</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Summary of tasks</strong></p>
-
-<p>In this section, you’ll learn how to create agent tools using pre-built connectors.</p>
-
 <p><strong>Scenario:</strong> Your Vestbjerg Maintenance Assistant needs to fetch real-time weather data when users ask about weather conditions.</p>
 
 <h3 id="objective-2">Objective<a class="header-link" href="#objective-2" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h3>
@@ -2240,27 +2065,6 @@ If the agent doesn’t use the tool automatically, check that the tool is enable
 <h2 id="use-case-4-build-custom-topics-for-structured-conversations">Use Case #4: Build Custom Topics for Structured Conversations<a class="header-link" href="#use-case-4-build-custom-topics-for-structured-conversations" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2><div style="border-left:4px solid #FF831D;background:#F8F8F8;padding:12px 16px;margin:16px 0;font-family:Arial,sans-serif;font-size:0.95em;"><strong style="color:#02018C;">Columbus note</strong><br>This use case is not part of the Agent in a Day workshop day, but it is not out of date. You are building on the <strong>standard harness</strong> (the classic experience), where topics are fully supported. Topics do not exist on the newer GitHub Copilot harness, which became the default in August 2026 — there, skills and workflows do the job instead. Work through this one in your own time if you want tightly scripted conversation flow. The scenario stays as Microsoft wrote it.</div>
 
 <p>Create structured conversation flows with triggers, nodes, and logic to handle specific user intents like mailing list signups.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Use case</th>
-      <th>Value added</th>
-      <th>Estimated effort</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Build Custom Topics for Structured Conversations</td>
-      <td>Create structured conversation flows that handle specific user intents and workflows</td>
-      <td>12 minutes</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Summary of tasks</strong></p>
-
-<p>In this section, you’ll learn how to create topics using natural language descriptions, explore topic nodes and triggers, and understand how topics structure conversations.</p>
 
 <p><strong>Scenario:</strong> Users want to join a Copilot Studio mailing list to receive announcements. You’ll create a topic that collects their email, first name, and last name, then demonstrates how this could connect to a backend system for actual submission.</p>
 
@@ -2441,6 +2245,93 @@ If the agent keeps asking for your email address, check that you entered a compl
 </ul>
 
 <p>By following these principles, you’ll build AI agents that not only answer questions but also take action - integrating with your organization’s systems and workflows to deliver real business value through conversational AI.</p>
+
+<hr>
+
+<h2 id="background">Background</h2>
+
+<p>More context on the concepts in this lab, if you want it.</p>
+
+<h3 id="why-this-matters">Why This Matters<a class="header-link" href="#why-this-matters" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h3>
+
+<p><strong>Building AI agents can feel overwhelming</strong> - especially when you’re starting from scratch and need them to actually DO things.</p>
+
+<p>Think of building an AI agent like assembling a team:</p>
+<ul>
+  <li><strong>Without proper setup</strong>: Your team has no job descriptions, no reference materials, no tools, and no processes - they give generic answers, can’t take action, and frustrate everyone</li>
+  <li><strong>With proper setup</strong>: Your team has clear roles, access to the right documents, powerful tools at their fingertips, and well-defined workflows - they deliver intelligent, actionable results every time</li>
+</ul>
+
+<p><strong>Common challenges solved by this lab:</strong></p>
+<ul>
+  <li>“I don’t know where to start with AI agent development”</li>
+  <li>“My agent gives generic answers that don’t help users”</li>
+  <li>“My agent needs real-time data from external systems”</li>
+  <li>“I need my agent to handle specific conversation flows and collect user information”</li>
+</ul>
+
+<p><strong>In just 45 minutes, you’ll have a fully functional AI agent with knowledge, tools, and structured conversation flows</strong> - no coding required.</p>
+
+<hr>
+
+<h3 id="introduction">Introduction<a class="header-link" href="#introduction" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h3>
+
+<p>Microsoft Copilot Studio empowers makers to build sophisticated AI agents without writing code. By combining intuitive visual tools with powerful AI capabilities, you can create agents that understand natural language, leverage your organization’s knowledge, connect to external services, and guide users through structured conversation flows.</p>
+
+<p><strong>Real-world example:</strong> A sales team needs an AI assistant that can answer product questions from official documentation, fetch real-time weather data for event planning, and collect contact information for a mailing list. With Copilot Studio, you build one agent that does all of this: it references product docs for accurate answers, uses connector tools for live data, and guides users through a structured signup flow - all without writing a single line of code.</p>
+
+<p>This lab takes you through the complete journey from agent creation to a fully capable assistant with knowledge sources, tools, and custom topics - giving you the foundation to build production-ready AI solutions.</p>
+
+<hr>
+
+<h3 id="core-concepts-overview">Core Concepts Overview<a class="header-link" href="#core-concepts-overview" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Concept</th>
+      <th>Why it matters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Agent Instructions</strong></td>
+      <td>Define your agent’s personality, expertise, and behavior - these instructions guide every interaction and ensure consistent, on-brand responses that align with your business goals</td>
+    </tr>
+    <tr>
+      <td><strong>Knowledge Sources</strong></td>
+      <td>Ground your agent in factual, domain-specific content by connecting documents, websites, and files - this transforms generic AI into a specialized expert that provides accurate, verifiable answers</td>
+    </tr>
+    <tr>
+      <td><strong>Tools</strong></td>
+      <td>Extend agent capabilities beyond knowledge sources by connecting to external APIs, connectors, and services - enabling real-time data access and action execution that makes agents truly interactive</td>
+    </tr>
+    <tr>
+      <td><strong>Topics</strong></td>
+      <td>Structured conversation flows with triggers, conditions, and nodes that define how agents respond to specific user intents - providing precise control over agent behavior</td>
+    </tr>
+    <tr>
+      <td><strong>Trigger Phrases</strong></td>
+      <td>Keywords and patterns that activate specific topics - these ensure your agent recognizes when to engage specialized conversation flows</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h3 id="summary-of-targets">Summary of Targets<a class="header-link" href="#summary-of-targets" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h3>
+
+<p>In this lab, you’ll build a Copilot Studio agent from the ground up, enhance it with knowledge, extend it with tools, and add structured conversation flows. By the end of the lab, you will:</p>
+
+<ul>
+  <li>Create a new Copilot Studio agent with custom instructions and configuration</li>
+  <li>Upload and integrate knowledge sources (documents and websites) to ground agent responses</li>
+  <li>Create a connector-based tool that retrieves real-time weather data</li>
+  <li>Create custom topics with triggers to handle specific conversation patterns</li>
+  <li>Test your agent across all capabilities to verify end-to-end functionality</li>
+</ul>
+
+<hr>
 
 <hr>
 

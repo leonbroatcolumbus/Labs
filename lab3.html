@@ -174,7 +174,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-bookmark"></i> On this page</h4></header>
-              <ul class="toc__menu"><li class=""><a href="#why-this-matters">Why This Matters</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#core-concepts-overview">Core Concepts Overview</a></li><li><a href="#documentation-and-additional-training-links">Documentation and Additional Training Links</a></li><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#summary-of-targets">Summary of Targets</a></li><li><a href="#use-cases-covered">Use Cases Covered</a></li><li><a href="#instructions-by-use-case">Instructions by Use Case</a></li><li><a href="#use-case-2-create-and-orchestrate-child-agents">Use Case #1: Create and Orchestrate Child Agents</a><ul><li><a href="#objective-1">Objective</a></li><li><a href="#step-by-step-instructions-1">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-2">Congratulations! You’ve completed Use Case 1!</a></li><li><a href="#test-your-understanding-1">Test your understanding</a></li></ul></li><li><a href="#use-case-3-deploy-your-agent-across-channels">Use Case #2: Deploy Your Agent Across Channels</a><ul><li><a href="#objective-2">Objective</a></li><li><a href="#step-by-step-instructions-2">Step-by-step instructions</a></li><li><a href="#congratulations-youve-completed-use-case-3">Congratulations! You’ve completed Use Case 2!</a></li><li><a href="#test-your-understanding-2">Test your understanding</a></li></ul></li><li><a href="#summary-of-learnings">Summary of learnings</a><ul><li><a href="#conclusions-and-recommendations">Conclusions and recommendations</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#use-cases-covered">Use Cases Covered</a></li><li><a href="#use-case-2-create-and-orchestrate-child-agents">Use Case #1: Create and Orchestrate Child Agents</a></li><li><a href="#use-case-3-deploy-your-agent-across-channels">Use Case #2: Deploy Your Agent Across Channels</a></li><li><a href="#summary-of-learnings">Summary of learnings</a></li><li><a href="#background">Background</a></li></ul>
             </nav>
           </aside>
         
@@ -1570,106 +1570,6 @@
 
 <hr>
 
-<h2 id="why-this-matters" class="">Why This Matters<a class="header-link" href="#why-this-matters" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
-
-<p><strong>Agents need specialization and accessibility to deliver real business value.</strong></p>
-
-<p>Think of child agents and channels like organizing a company:</p>
-<ul>
-  <li><strong>Without child agents</strong>: One agent tries to be an expert in everything, leading to confused responses - like a single employee covering every department</li>
-  <li><strong>Without channels</strong>: Your perfectly built agent sits behind a locked door - users can’t reach it where they work</li>
-</ul>
-
-<p><strong>With both</strong>: Your agent delegates to specialists when needed and meets users in Teams, Microsoft 365 Copilot and beyond - like a well-organized company with clear expertise and open doors.</p>
-
-<p><strong>Common challenges solved by this lab:</strong></p>
-<ul>
-  <li>“My agent is overwhelmed trying to be an expert in too many areas”</li>
-  <li>“My agent is ready but I don’t know how to make it available to users”</li>
-  <li>“I need my agent where my colleagues already work — in Teams and Microsoft 365 Copilot”</li>
-</ul>
-
-<p><strong>In 30 minutes, you’ll transform your agent into a multi-agent system deployed where users need it.</strong></p>
-
-<hr>
-
-<h2 id="introduction">Introduction<a class="header-link" href="#introduction" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
-
-<p>Child agents and channels are the keys to building enterprise-grade agent solutions. Child agents enable modular architecture where specialized sub-agents handle specific domains. The agents configured channels (such as Teams, web widgets, or custom applications) determine where and how users interact with your agent.</p>
-
-<p><strong>Real-world example:</strong> An IT support agent handles everyday questions itself. When a user asks about password policies, the parent agent delegates to a specialized “Security Policies” child agent with deep authentication knowledge. The entire experience is available in Microsoft Teams (where employees chat daily), on the company intranet (for quick access), and through a mobile app (for field workers). Child agents provide expertise, and channels ensure accessibility.</p>
-
-<p>This lab teaches you how to architect sophisticated agent solutions that scale with your organization’s complexity by combining specialized intelligence and strategic deployment.</p>
-
-<hr>
-
-<h2 id="core-concepts-overview">Core Concepts Overview<a class="header-link" href="#core-concepts-overview" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Concept</th>
-      <th>Why it matters</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Child Agents</strong></td>
-      <td>Specialized sub-agents with focused knowledge and instructions - these enable modular architecture, domain expertise, and scalable agent development</td>
-    </tr>
-    <tr>
-      <td><strong>Agent Orchestration</strong></td>
-      <td>Parent agents route conversations to appropriate child agents based on context - this creates seamless multi-agent experiences that leverage specialized knowledge</td>
-    </tr>
-    <tr>
-      <td><strong>Channels</strong></td>
-      <td>Distribution points where users interact with your agent - each channel (Teams, web, mobile, custom) has unique capabilities, authentication requirements, and user experiences</td>
-    </tr>
-    <tr>
-      <td><strong>Availability</strong></td>
-      <td>Settings that decide who can find and use your agent in a channel - essential for rolling out safely, starting small before sharing widely</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr>
-
-<h2 id="documentation-and-additional-training-links">Documentation and Additional Training Links<a class="header-link" href="#documentation-and-additional-training-links" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
-
-<ul>
-  <li><a href="https://learn.microsoft.com/microsoft-copilot-studio/advanced-use-skills" target="_blank" rel="noopener noreferrer">Create and manage child agents</a></li>
-  <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/architecture/multi-agent-patterns" target="_blank" rel="noopener noreferrer">Multi-agent patterns</a></li>
-  <li><a href="https://learn.microsoft.com/microsoft-copilot-studio/publication-fundamentals-publish-channels" target="_blank" rel="noopener noreferrer">Configure channels for your agent</a></li>
-  <li><a href="https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams" target="_blank" rel="noopener noreferrer">Deploy to Microsoft Teams</a></li>
-</ul>
-
-<hr>
-
-<h2 id="prerequisites">Prerequisites<a class="header-link" href="#prerequisites" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
-
-<ul>
-  <li>Completed <a href="https://microsoft.github.io/mcs-labs/labs/core-concepts-agent-knowledge-tools/">Build Intelligent Agents with Knowledge Sources, Tools, and Topics</a> lab - specifically the Vestbjerg Maintenance Assistant, which this lab builds on</li>
-  <li>Access to Microsoft Copilot Studio with permission to publish agents and configure channels</li>
-  <li>Access to Microsoft Teams (for Teams channel testing)</li>
-  <li>The P-207 Operation and Maintenance Manual, for the child agent knowledge source</li>
-</ul>
-
-<hr>
-
-<h2 id="summary-of-targets">Summary of Targets<a class="header-link" href="#summary-of-targets" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
-
-<p>In this lab, you’ll build a multi-agent architecture with child agents and deploy your agent across channels. By the end of the lab, you will:</p>
-
-<ul>
-  <li>Create child agents with specialized knowledge and instructions</li>
-  <li>Configure parent agent orchestration rules for proper conversation routing</li>
-  <li>Deploy your agent to Microsoft Teams</li>
-  <li>Deploy your agent to Microsoft 365 Copilot</li>
-  <li>Test multi-channel deployment to verify consistent functionality</li>
-</ul>
-
-<hr>
-
 <h2 id="use-cases-covered">Use Cases Covered<a class="header-link" href="#use-cases-covered" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
 
 <table>
@@ -1700,34 +1600,9 @@
 
 <hr>
 
-<h2 id="instructions-by-use-case">Instructions by Use Case<a class="header-link" href="#instructions-by-use-case" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
-
-<hr>
-
-<h2 id="use-case-2-create-and-orchestrate-child-agents">Use Case #1: Create and Orchestrate Child Agents<a class="header-link" href="#use-case-2-create-and-orchestrate-child-agents" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2><div style="border-left:4px solid #FF831D;background:#F8F8F8;padding:12px 16px;margin:16px 0;font-family:Arial,sans-serif;font-size:0.95em;"><strong style="color:#02018C;">Columbus note</strong><br>This is the first join in the chain you saw this morning. A parent agent that routes to a specialist, and knows when <em>not</em> to. The same pattern connects maintenance to inventory, procurement and scheduling — none of it harder than what you are about to do.</div>
+<h2 id="use-case-2-create-and-orchestrate-child-agents">Use Case #1: Create and Orchestrate Child Agents<a class="header-link" href="#use-case-2-create-and-orchestrate-child-agents" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2>
 
 <p>Build specialized child agents with focused knowledge and instructions to create modular, scalable agent architectures.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Use case</th>
-      <th>Value added</th>
-      <th>Estimated effort</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Create and Orchestrate Child Agents</td>
-      <td>Build specialized sub-agents with focused expertise to create modular, scalable solutions</td>
-      <td>13 minutes</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Summary of tasks</strong></p>
-
-<p>In this section, you’ll learn how to create child agents, configure their specialized knowledge and instructions, set up orchestration rules in the parent agent, and test multi-agent interactions.</p>
 
 <p><strong>Scenario:</strong> Your Maintenance Assistant needs specialist knowledge about spare parts. Rather than overloading the main agent, you’ll create a child agent called “Parts and Spares” that knows the plant’s spares catalogue. The parent agent will route parts questions to it, while continuing to handle fault reports itself. This is the first join in a chain — the same pattern that later connects maintenance to inventory, procurement and scheduling.</p>
 
@@ -1943,27 +1818,6 @@ Disabled child agents won’t be invoked by the parent agent. Always verify chil
 <h2 id="use-case-3-deploy-your-agent-across-channels">Use Case #2: Deploy Your Agent Across Channels<a class="header-link" href="#use-case-3-deploy-your-agent-across-channels" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h2><div style="border-left:4px solid #FF831D;background:#F8F8F8;padding:12px 16px;margin:16px 0;font-family:Arial,sans-serif;font-size:0.95em;"><strong style="color:#02018C;">Columbus note</strong><br>Work through the Channels overview and publish your agent. The Teams deployment steps that follow are run as a demonstration from the front rather than hands-on — they involve signing in to Teams in a second browser session and are fragile in a full room. Watch, then try them in your own tenant afterwards.</div>
 
 <p>Learn how to configure and deploy your agent to channels, understand channel-specific settings, and decide who can use your agent.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Use case</th>
-      <th>Value added</th>
-      <th>Estimated effort</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Deploy Your Agent Across Channels</td>
-      <td>Make your agent accessible via Teams and Microsoft 365 Copilot</td>
-      <td>12 minutes</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Summary of tasks</strong></p>
-
-<p>In this section, you’ll learn how to navigate the Channels interface, configure your agent to deploy to Microsoft Teams and Microsoft 365 Copilot, and understand channel capabilities and limitations.</p>
 
 <p><strong>Scenario:</strong> Your Maintenance Assistant works. Now the question is who else gets to use it, and where. Publishing is the point at which your experiment becomes something other people depend on.</p>
 
@@ -2201,6 +2055,90 @@ Always test your agent on each deployed channel. Some features or formatting may
 </ul>
 
 <p>By following these principles, you’ll build sophisticated agent solutions that scale with your organization’s complexity - combining conversation memory, specialized intelligence, and strategic deployment to deliver accurate, contextual, and valuable user experiences wherever your users need them.</p>
+
+<hr>
+
+<h2 id="background">Background</h2>
+
+<p>More context on the concepts in this lab, if you want it.</p>
+
+<h3 id="why-this-matters" class="">Why This Matters<a class="header-link" href="#why-this-matters" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h3>
+
+<p><strong>Agents need specialization and accessibility to deliver real business value.</strong></p>
+
+<p>Think of child agents and channels like organizing a company:</p>
+<ul>
+  <li><strong>Without child agents</strong>: One agent tries to be an expert in everything, leading to confused responses - like a single employee covering every department</li>
+  <li><strong>Without channels</strong>: Your perfectly built agent sits behind a locked door - users can’t reach it where they work</li>
+</ul>
+
+<p><strong>With both</strong>: Your agent delegates to specialists when needed and meets users in Teams, Microsoft 365 Copilot and beyond - like a well-organized company with clear expertise and open doors.</p>
+
+<p><strong>Common challenges solved by this lab:</strong></p>
+<ul>
+  <li>“My agent is overwhelmed trying to be an expert in too many areas”</li>
+  <li>“My agent is ready but I don’t know how to make it available to users”</li>
+  <li>“I need my agent where my colleagues already work — in Teams and Microsoft 365 Copilot”</li>
+</ul>
+
+<p><strong>In 30 minutes, you’ll transform your agent into a multi-agent system deployed where users need it.</strong></p>
+
+<hr>
+
+<h3 id="introduction">Introduction<a class="header-link" href="#introduction" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h3>
+
+<p>Child agents and channels are the keys to building enterprise-grade agent solutions. Child agents enable modular architecture where specialized sub-agents handle specific domains. The agents configured channels (such as Teams, web widgets, or custom applications) determine where and how users interact with your agent.</p>
+
+<p><strong>Real-world example:</strong> An IT support agent handles everyday questions itself. When a user asks about password policies, the parent agent delegates to a specialized “Security Policies” child agent with deep authentication knowledge. The entire experience is available in Microsoft Teams (where employees chat daily), on the company intranet (for quick access), and through a mobile app (for field workers). Child agents provide expertise, and channels ensure accessibility.</p>
+
+<p>This lab teaches you how to architect sophisticated agent solutions that scale with your organization’s complexity by combining specialized intelligence and strategic deployment.</p>
+
+<hr>
+
+<h3 id="core-concepts-overview">Core Concepts Overview<a class="header-link" href="#core-concepts-overview" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Concept</th>
+      <th>Why it matters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Child Agents</strong></td>
+      <td>Specialized sub-agents with focused knowledge and instructions - these enable modular architecture, domain expertise, and scalable agent development</td>
+    </tr>
+    <tr>
+      <td><strong>Agent Orchestration</strong></td>
+      <td>Parent agents route conversations to appropriate child agents based on context - this creates seamless multi-agent experiences that leverage specialized knowledge</td>
+    </tr>
+    <tr>
+      <td><strong>Channels</strong></td>
+      <td>Distribution points where users interact with your agent - each channel (Teams, web, mobile, custom) has unique capabilities, authentication requirements, and user experiences</td>
+    </tr>
+    <tr>
+      <td><strong>Availability</strong></td>
+      <td>Settings that decide who can find and use your agent in a channel - essential for rolling out safely, starting small before sharing widely</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h3 id="summary-of-targets">Summary of Targets<a class="header-link" href="#summary-of-targets" title="Permalink"><span class="sr-only">Permalink</span><i class="fas fa-link"></i></a></h3>
+
+<p>In this lab, you’ll build a multi-agent architecture with child agents and deploy your agent across channels. By the end of the lab, you will:</p>
+
+<ul>
+  <li>Create child agents with specialized knowledge and instructions</li>
+  <li>Configure parent agent orchestration rules for proper conversation routing</li>
+  <li>Deploy your agent to Microsoft Teams</li>
+  <li>Deploy your agent to Microsoft 365 Copilot</li>
+  <li>Test multi-channel deployment to verify consistent functionality</li>
+</ul>
+
+<hr>
 
 <hr>
 
